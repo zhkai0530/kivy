@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)file:///C:/Users/Administrator/AppData/Local/Temp/MarkdownPadPreview.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>09-Kivy-Graphics</title>
+
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<!--<base href="file:\\\D:\pythonProject\Kivy-CN-master\">--><base href=".">
+</head>
+<body>
+<p>Title: Kivy Graphics
+Date: 2017-02-12
+Category: Kivy
+Tags: Python,Kivy</p>
+<h1>Kivy中文编程指南：图形</h1>
+<p><a href="https://kivy.org/docs/guide/graphics.html">英文原文</a></p>
+<h2>译者前言</h2>
+<p>这一章节比前两章节简单很多，翻译的也比较顺了。</p>
+<h2>简介Canvas</h2>
+<p>Kivy中控件图形呈现是使用Canvas完成的，可以将其看作一个无限的绘图板，也是一组绘图指令。有很多种绘图指令都可以应用或者添加到你的Canvas伤，不过总体上分为两类：</p>
+<ul>
+<li><a href="https://kivy.org/docs/api-kivy.graphics.context_instructions.html#module-kivy.graphics.context_instructions" title="kivy.graphics.context_instructions"><code>context instructions</code>环境指令</a></li>
+<li><a href="https://kivy.org/docs/api-kivy.graphics.vertex_instructions.html#module-kivy.graphics.vertex_instructions" title="kivy.graphics.vertex_instructions"><code>vertex instructions</code>顶点指令</a></li>
+</ul>
+<p><a href="https://kivy.org/docs/api-kivy.graphics.context_instructions.html#module-kivy.graphics.context_instructions" title="kivy.graphics.context_instructions"><code>context instructions</code>环境指令</a>不绘制任何图形，但会改变<a href="https://kivy.org/docs/api-kivy.graphics.vertex_instructions.html#module-kivy.graphics.vertex_instructions" title="kivy.graphics.vertex_instructions"><code>vertex instructions</code>顶点指令</a>的绘制结果。</p>
+<p>Canvas都包含两个指令分支。分别是<a href="https://kivy.org/docs/api-kivy.graphics.html#kivy.graphics.Canvas.before" title="kivy.graphics.Canvas.before"><code>canvas.before</code></a>和<a href="https://kivy.org/docs/api-kivy.graphics.html#kivy.graphics.Canvas.after" title="kivy.graphics.Canvas.after"><code>canvas.after</code></a> 这两种指令群。这两组指令分别在<code>Canvas</code>图形绘制前后执行。
+绘制前的会被绘制的图形覆盖掉，绘制后的会覆盖在图形上层。这些指令都在用户对它们读取之后才会被创建。</p>
+<p>要对一个控件添加Canvas绘图指令，需要使用Canvas环境指令：</p>
+<p>```Python
+class MyWidget(Widget):
+    def <strong>init</strong>(self, <strong>kwargs):
+        super(MyWidget, self).<strong>init</strong>(</strong>kwargs)
+        with self.canvas:
+            # add your instruction for main canvas here
+			# 这里是增加一个座位主绘图的指令</p>
+<pre><code>    with self.canvas.before:
+        # you can use this to add instructions rendered before
+        # 这里可以在绘图之前添加指令
+
+    with self.canvas.after:
+        # you can use this to add instructions rendered after
+        # 这里可以在绘图之后添加指令
+</code></pre>
+
+<p>```</p>
+<h2>环境指令</h2>
+<p>环境指令是用于操作opengl环境。 可以旋转，翻译和缩放画布。还可以附加纹理或更改绘图颜色。下面这段代码里面的是最常用到的更改颜色的指令，其他的环境指令也都很有用处：</p>
+<p><code>Python
+with self.canvas.before:
+    Color(1, 0, .4, mode='rgb')</code></p>
+<h2>绘图指令</h2>
+<p>绘图指令可简可繁，最简单的比如画一个多边形，更复杂的比如绘制网格或者贝塞尔曲线都可以：</p>
+<p>```Python
+with self.canvas:
+   # draw a line using the default color
+   # 用默认颜色画一条线
+   Line(points=(x1, y1, x2, y2, x3, y3))</p>
+<p># lets draw a semi-transparent red square
+   # 接下来画一个半透明的红方块
+   Color(1, 0, 0, .5, mode='rgba')
+   Rectangle(pos=self.pos, size=self.size)
+```</p>
+<h2>操作指令</h2>
+<p>有时候可能需要把之前添加到Canvas绘图上的指令进行更改或者删除，这可以有很多种办法，要根据具体需求来选择：</p>
+<p>可以给指令创建一个引用然后对其进行更新：</p>
+<p>```Python
+class MyWidget(Widget):
+    def <strong>init</strong>(self, <strong>kwargs):
+        super(MyWidget, self).<strong>init</strong>(</strong>kwargs)
+        with self.canvas:
+            self.rect = Rectangle(pos=self.pos, size=self.size)</p>
+<pre><code>    self.bind(pos=self.update_rect)
+    self.bind(size=self.update_rect)
+
+def update_rect(self, *args):
+    self.rect.pos = self.pos
+    self.rect.size = self.size
+</code></pre>
+
+<p>```</p>
+<p>或者也可以清空Canvas画布然后重新画：</p>
+<p>```Python
+class MyWidget(Widget):
+    def <strong>init</strong>(self, <strong>kwargs):
+        super(MyWidget, self).<strong>init</strong>(</strong>kwargs)
+        self.draw<em>my</em>stuff()</p>
+<pre><code>    self.bind(pos=self.draw_my_stuff)
+    self.bind(size=self.draw_my_stuff)
+
+def draw_my_stuff(self):
+    self.canvas.clear()
+
+    with self.canvas:
+        self.rect = Rectangle(pos=self.pos, size=self.size)
+</code></pre>
+
+<p>```</p>
+<p>要注意更新指令的方法是更好的选择，因为这样减少了开销，并且避免了创建新指令。</p>
+
+
+
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
+</body></html>

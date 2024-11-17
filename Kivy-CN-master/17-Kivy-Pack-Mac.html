@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)file:///C:/Users/Administrator/AppData/Local/Temp/MarkdownPadPreview.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>17-Kivy-Pack-Mac</title>
+
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<!--<base href="file:\\\D:\pythonProject\Kivy-CN-master\">--><base href=".">
+</head>
+<body>
+<p>Title: Kivy Pack Mac
+Date: 2017-03-02
+Category: Kivy
+Tags: Python,Kivy</p>
+<h1>Kivy中文编程指南：打包为 Mac 系统可执行文件</h1>
+<p><a href="https://kivy.org/docs/guide/packaging-osx.html">英文原文</a></p>
+<h4>特别注意</h4>
+<p>本文所提供的打包 Kivy 应用程序的方法必须在 OS X 系统内进行，而且不再支持 32 位平台。</p>
+<h2>使用 Buildozer</h2>
+<p><code>Bash
+pip install git+http://github.com/kivy/buildozer cd /to/where/I/Want/to/package buildozer init</code>
+（译者注：这里的/to/where/I/Want/to/package 就是你要打包的应用所在目录。）</p>
+<p>然后就还是修改 buildozer.spec 文件，在里面添加好你的应用需要用到的信息。添加依赖包的位置在 requirements= 的那个位置。</p>
+<p>默认情况下，requirements 位置所指定的 Kivy 版本会被忽略掉。</p>
+<p>如果你在应用程序目录下有 Kivy.app （/Applications/Kivy.app），那就会用这个来打包。如果没有，还可以从 Kivy.org 下载最新版来用了。</p>
+<p>如果你要用 Python3 来打包，就就直接从 Kivy.org 的下载页面下载 Kivy3.7z 这个包，然后把它解压缩到应用目录 /Applications 下，命名为 Kivy.app，然后运行：</p>
+<p><code>Bash
+buildozer osx debug</code></p>
+<p>打包好应用之后，就可以移除用不上的包了，比如如果你不用视频功能，那就可以去掉 gstreamer。同理，其他的用不上的功能，也都可以去掉，这就可以保证打包出来的应用能够有尽量小的体积，足够运行就好了。</p>
+<p>作为示例，我们用这个方法打包好了一个应用，Python2 的版本大概 9MB 多一点，Python3 的是 15MB 左右，可以在<a href="https://drive.google.com/drive/folders/0B1WO07-OL50_alFzSXJUajBFdnc">官方提供的谷歌网盘</a>下载来体验一下。（译者注：如果你身处大陆而无法访问谷歌这种不存在的网站，那么可以试试<a href="https://pan.baidu.com/s/1gfBSD4B">我的百度网盘分享</a>。）</p>
+<p>就这么多，动手试试吧。</p>
+<p>目前的 Buildozer 使用了 Kivy SDK 来打包你的应用程序。如果你想对你的程序进行更深入的修改定制，而 buildozer 不足以满足你的需求，你可以试试直接使用 SDK，下面就要详细介绍一下这部分。</p>
+<h2>使用 Kivy SDK</h2>
+<p>从 1.9.0 版本开始，Kivy 就开始发布针对 OS X 平台的自我包含的便捷包。</p>
+<p>用下面描述的方法就可以使用 Kivy SDK 来打包和发布应用程序了，要添加一些诸如 SDL2 或者 GStreamer 之类的包也都更简单了。</p>
+<p>1 首先要确保有未修改过的原版 Kivy SDK，也就是从下载页面获取的 Kivy.app 这个文件。</p>
+<p>2 然后运行下面的命令：</p>
+<p><code>Bash
+mkdir packaging
+cd packaging
+packaging&gt; git clone https://github.com/kivy/kivy-sdk-packager
+packaging&gt; cd kivy-sdk-packager/osx
+osx&gt; cp -a /Applications/Kivy.app ./Kivy.App</code></p>
+<h4>特别注意</h4>
+<p>上面这一步是至关重要的，一定要确保目录和权限都没有问题。<code>cp -rf</code> 这样的命令也能实现复制，但会让应用程序无法运行，并且在后续步骤中导致各种错误。</p>
+<p>3 接下来就是要把你用 Kivy.app 编译好的应用程序包含进目标文件夹，使用如下命令：</p>
+<p><code>Bash
+osx&gt; ./package-app.sh /path/to/your/app_folder_name&gt;/</code>
+<app_folder_name> 就是你应用程序的名字。</app_folder_name></p>
+<p>这个命令会把 Kivy.app 复制成 <app_folder_name>.app，并把应用程序的一份编译好的副本包含进去。</app_folder_name></p>
+<p>4 就这些了，你的应用程序已经打包完毕，可以拿出去安装了。接下来可以按照下面的方法对你的应用进行更进一步的定制了。</p>
+<h3>安装模块</h3>
+<p>OS X 上的 Kivy 包邮自己的虚拟环境，当你使用 kivy 命令来运行的时候就会激活这个虚拟环境。如果要安装额外的一些模块，可以用如下命令：</p>
+<p><code>Bash
+kivy -m pip install</code></p>
+<h3>模块和文件安到哪了？</h3>
+<p>在 Kivy.app 这个文件内部，虚拟环境位置如下：</p>
+<p><code>Bash
+Kivy.app/Contents/Resources/venv/</code></p>
+<p>如果你安装了一个安装二进制的模块，比如 kivy-garden。那么这些二进制文件只能在虚拟环境中才是可用的，就比如你先运行了下面这个命令：</p>
+<p><code>Bash
+kivy -m pip install kivy-garden</code></p>
+<p>然后安装的 garden lib 就只在你激活这个虚拟环境的时候才可用。</p>
+<p><code>Bash
+source /Applications/Kivy.app/Contents/Resources/venv/bin/activate garden install mapview deactivate</code></p>
+<h3>安装二进制文件</h3>
+<p>这个比较简单，就把二进制文件复制到虚拟目录下的 bin 文件夹就可以了。（Kivy.app/Contents/Resources/venv/bin/）</p>
+<h3>包含其他框架</h3>
+<p>Kivy.app 已经自带了 SDL2 和 Gstreamer 这两个框架。要包含其他框架可以参考下面的方法：</p>
+<p><code>Bash
+git clone http://github.com/tito/osxrelocator
+export PYTHONPATH=~/path/to/osxrelocator
+cd Kivy.app
+python -m osxrelocator -r . /Library/Frameworks/&lt;Framework_name&gt;.framework/ \
+@executable_path/../Frameworks/&lt;Framework_name&gt;.framework/</code></p>
+<p>Do not forget to replace  with your framework. This tool osxrelocator essentially changes the path for the libs in the framework such that they are relative to the executable within the .app, making the Framework portable with the .app.</p>
+<p>一定别忘了把上面样例中的 <framework_name>  替换成你要安装的框架名字。osxrelocator 这个工具可以改变框架中的链接库的路径，这样就能让它们指向 .app 文件内的可执行文件，也就让此框架成为 .app 文件内可用的内置框架了。</framework_name></p>
+<h4>缩小应用体积</h4>
+<p>现在这个应用程序的体积可能已经相当大了，好在很多没有用上的部分可以从包中移除。</p>
+<p>举例来说，如果你没有使用 Gstreamer，就可以从你应用程序的 .app 文件内的 /Contents/Frameworks 目录中把它删除掉。类似的像是在 /Applications/Kivy.app/Contents/Resources/kivy/ 目录下的 examples，tools，docs 等等这些文件夹都可以删掉的。</p>
+<p>这样就可以让你的包只包含你的应用程序用到的内容。</p>
+<h4>修改设置</h4>
+<p>通过修改应用程序的 .app 文件内 /Contents/info.plist 这个文件，就可以修改图标和其他的设置了。</p>
+<h4>创建 DMG</h4>
+<p>用如下命令就可以创建一个 DMG 镜像文件了：</p>
+<p><code>Bash
+osx&gt; ./create-osx-dmg.sh YourApp.app</code></p>
+<p>一定要注意末尾没有额外的 /。 这样就能生成一个压缩的 DMG 文件，能进一步缩小应用发布时候的体积了。</p>
+<h2>使用 PyInstaller，无 HomeBrew</h2>
+<p>首先是安装 Kivy 和依赖包，不用 HomeBrew 的方法可以在<a href="http://kivy.org/docs/installation/installation.html#development-version">官方文档</a> 或者<a href="http://blog.cycleuser.org/kivy-installment-tutorial.html">译者的博客</a>或者<a href="https://zhuanlan.zhihu.com/p/24644473">译者的专栏</a>中查找。</p>
+<p>安装好了Kivy 以及依赖包之后，就需要安装 PyInstaller 了。</p>
+<p>（译者注：PyInstaller 目前不支持 Python3.6，时间为2017-03-02。）</p>
+<p>假设用一个名为 testpackaging 的文件夹：</p>
+<p><code>Bash
+cd testpackaging
+git clone http://github.com/pyinstaller/pyinstaller</code></p>
+<p>在这个目录中创建一个名为 touchtracer.spec 的配置文件，然后添加如下的代码到该文件中：</p>
+<p>```Bash</p>
+<h1>-<em>- mode: python -</em>-</h1>
+<p>block<em>cipher = None
+from kivy.tools.packaging.pyinstaller</em>hooks import get_deps<em>all, hookspath, runtime</em>hooks</p>
+<p>a = Analysis(['/path/to/yout/folder/containing/examples/demo/touchtracer/main.py'],
+             pathex=['/path/to/yout/folder/containing/testpackaging'],
+             binaries=None,
+             win<em>no</em>prefer<em>redirects=False,
+             win<em>private</em>assemblies=False,
+             cipher=block</em>cipher,
+             hookspath=hookspath(),
+             runtime<em>hooks=runtime</em>hooks(),
+             **get<em>deps</em>all())
+pyz = PYZ(a.pure, a.zipped<em>data,
+             cipher=block<em>cipher)
+exe = EXE(pyz,
+          a.scripts,
+          exclude</em>binaries=True,
+          name='touchtracer',
+          debug=False,
+          strip=False,
+          upx=True,
+          console=False )
+coll = COLLECT(exe, Tree('../kivy/examples/demo/touchtracer/'),
+               Tree('/Library/Frameworks/SDL2</em>ttf.framework/Versions/A/Frameworks/FreeType.framework'),
+               a.binaries,
+               a.zipfiles,
+               a.datas,
+               strip=False,
+               upx=True,
+               name='touchtracer')
+app = BUNDLE(coll,
+             name='touchtracer.app',
+             icon=None,
+         bundle_identifier=None)
+```</p>
+<p>把路径改到你的相对路径：</p>
+<p><code>Bash
+a = Analysis(['/path/to/yout/folder/containing/examples/demo/touchtracer/main.py'],
+            pathex=['/path/to/yout/folder/containing/testpackaging'],
+...
+...
+coll = COLLECT(exe, Tree('../kivy/examples/demo/touchtracer/'),</code></p>
+<p>然后运行如下命令：</p>
+<p><code>Bash
+pyinstaller/pyinstaller.py touchtracer.spec</code></p>
+<p>把这里的 touchtracer  替换成你的应用名称。之后就可以在 dist 文件夹下看到你的 .app 文件了。</p>
+<h2>使用 PyInstaller + HomeBrew</h2>
+<h4>特别注意</h4>
+<p>打包你的应用程序的时候，你定要在你要兼容的最老版本的 OS X 系统上进行。</p>
+<h3>完整指南</h3>
+<p>1 安装 <a href="http://brew.sh/">Homebrew</a></p>
+<p>2 安装 Python:</p>
+<p><code>Bash
+brew install python</code></p>
+<h4>特别注意</h4>
+<p>如果要用 Python3 ，就用 <code>brew install python3</code> ，然后把下文中的 <code>pip</code> 改成 <code>pip3</code> 就可以了。</p>
+<p>3 (Re)install your dependencies with <code>--build-bottle</code> to make sure they can be used on other machines:</p>
+<p><code>Bash
+brew reinstall --build-bottle sdl2 sdl2_image sdl2_ttf sdl2_mixer</code></p>
+<h4>特别注意</h4>
+<p>如果你的项目依赖 Gstreamer 或者其他的链接库，一定要按照下文的方法添加 <code>--build-bottle</code> 来安装。</p>
+<p>4 安装 Cython 和 Kivy:</p>
+<p><code>Bash
+pip install -I Cython==0.23
+USE_OSX_FRAMEWORKS=0 pip install -U kivy</code></p>
+<p>5 安装 PyInstaller:</p>
+<p><code>Bash
+pip install -U pyinstaller</code></p>
+<p>6 使用到 main.py 的路径来打包应用：</p>
+<p>```Bash
+pyinstaller -y --clean --windowed --name touchtracer \
+      --exclude-module _tkinter \
+      --exclude-module Tkinter \
+      --exclude-module enchant \
+      --exclude-module twisted \
+      /usr/local/share/kivy-examples/demo/touchtracer/main.py</p>
+<h4>特别注意</h4>
+<p>这样不能把额外的图像和声音文件复制进去。要添加这些内容还是要创建一个专门的<code>.spec</code>配置文件。</p>
+<h3>编辑<code>.spec</code> 配置文件</h3>
+<p>咱们用的这个配置文件是 touchtracer.spec ， 位置在刚刚运行了 pyinstaller 的目录。</p>
+<p>需要对配置文件中的 COLLECT() 调用的部分进行修改，要添加上 touchtracer 用到的资源（比如touchtracer.kv， particle.png，等等）。修改这一行，添加一个 Tree() 对象。这个 Tree 会搜索 touchtracer 目录下的所有文件，并添加到你的包当中。 COLLECT 的那部分代码应该大概如下所示：</p>
+<p><code>Bash
+coll = COLLECT(exe, Tree('/usr/local/share/kivy-examples/demo/touchtracer/'),
+               a.binaries,
+               a.zipfiles,
+               a.datas,
+               strip=None,
+               upx=True,
+               name='touchtracer')</code></p>
+<p>这样会把需要的文件都添加进去，这样 PyInstaller 就能包含需要用到的 Kivy 文件了。弄妥了之后，你的 spec 配置文件就可以执行了。</p>
+<h3>使用 spec 来构建并打包成 DMG</h3>
+<p>1 打开终端。</p>
+<p>2 进入到 PyInstaller 的目录，然后用如下命令进行构建：</p>
+<p><code>Bash
+pyinstaller -y --clean --windowed touchtracer.spec</code></p>
+<p>3 运行来试试：</p>
+<p><code>Bash
+pushd dist
+hdiutil create ./Touchtracer.dmg -srcfolder touchtracer.app -ov
+popd</code></p>
+<p>4 然后就能在 dist 目录下找到 Touchtracer.dmg 这个文件了。</p>
+<h3>额外的链接库</h3>
+<h4>GStreamer</h4>
+<p>如果你的项目需要 GStreamer，那就运行如下命令：</p>
+<p><code>Bash
+brew reinstall --build-bottle gstreamer gst-plugins-{base,good,bad,ugly}</code></p>
+<h4>特别注意</h4>
+<p>如果你的项目需要对 Ogg Vorbis（音频压缩格式，类似于MP3，完全免费、开放和没有专利限制，支持多声道） 的支持，一定要在上面的命令后加上 <code>--with-libvorbis</code>。</p>
+<p>如果你用的是通过 HomeBrew 安装的 Python，那就还需要下面这一步，除非<a href="https://github.com/Homebrew/homebrew/pull/46097">这个问题</a>弄妥了：</p>
+<p><code>Bash
+brew reinstall --with-python --build-bottle https://github.com/cbenhagen/homebrew/raw/patch-3/Library/Formula/gst-python.rb</code></p>
+
+
+
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
+</body></html>

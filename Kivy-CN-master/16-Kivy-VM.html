@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)file:///C:/Users/Administrator/AppData/Local/Temp/MarkdownPadPreview.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>16-Kivy-VM</title>
+
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<!--<base href="file:\\\D:\pythonProject\Kivy-CN-master\">--><base href=".">
+</head>
+<body>
+<p>Title: Kivy VM
+Date: 2017-03-6
+Category: Kivy
+Tags: Python,Kivy</p>
+<h1>Kivy中文编程指南：Kivy 虚拟机</h1>
+<p><a href="https://kivy.org/docs/guide/packaging-android-vm.html">英文原文</a></p>
+<h2>简介<a href="https://kivy.org/docs/guide/packaging-android-vm.html#introduction" title="Permalink to this headline">¶</a></h2>
+<p>目前，Kivy 的 Android 应用程序构建只能在配置有 python-for-android、 Android SDK 和 NDK 的 Linux 环境进行。这对于 Windows 或者 OS X 的用户来说，搭建起来就有点麻烦，所以 Kivy 官方提供了一个完全配置好的 <a href="http://www.virtualbox.org/">VirtualBox</a> 虚拟机磁盘镜像，用来减轻自己搭建的哀伤与痛苦。</p>
+<p>如果你对于虚拟机不太了解，建议去阅读以下<a href="http://en.wikipedia.org/wiki/Virtualization">维基百科上面的虚拟机页面</a>。</p>
+<h2>上手<a href="https://kivy.org/docs/guide/packaging-android-vm.html#getting-started" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li>首先是到<a href="http://kivy.org/#download"> Kivy 下载页面</a> 找到 <strong>Virtual Machine</strong> 这一部分。下载的文件超过 2GB ，解压缩之后是大概 6GB。解压缩文件之后别忘掉 vdi 虚拟磁盘的位置。</li>
+<li>根据你机器的操作系统版本，去<a href="https://www.virtualbox.org/wiki/Downloads"> VirtualBox 下载页面</a> 下载对应的安装包，然后安装。</li>
+<li>启动 VirtualBox，点击新建按钮。然后选择操作系统为 “linux” ，版本设置为 “Ubuntu 64-bit”。</li>
+<li>在 “Hard drive” 硬盘这个选项，选择“Use an existing virtual hard drive file”，即使用已有的虚拟硬盘文件。这时候找到上面你下载并解压出来的那个 vdi 文件，选中使用它。</li>
+<li>到虚拟机设置的页面。在“Display -&gt; Video” 显示器-&gt;显卡，这一部分，吧显存增加到至少 32MB 以上。启用 3D 加速来提高用户体验。</li>
+<li>启动虚拟机，然后看看桌面上的 readme 文件，根据指示操作就行了。</li>
+</ol>
+<h2>构建 APK<a href="https://kivy.org/docs/guide/packaging-android-vm.html#building-the-apk" title="Permalink to this headline">¶</a></h2>
+<p>虚拟机家在之后，就根据 python-for-android 打包指南里面的讲解来构建 APK 文件里了：<a href="https://kivy.org/docs/guide/packaging-android.html#packaging-your-application-into-apk">英文原版</a>，<a href="http://blog.cycleuser.org/kivy-pack-android.html">中文翻译版本</a>或者<a href="https://zhuanlan.zhihu.com/p/25571974">知乎专栏的镜像</a>。也根本不用使用 git clone 下载什么的了，因为虚拟机里面的 python-for-android 已经安装配置好了，就在虚拟系统的 home 目录里面了。</p>
+<h2>提示建议<a href="https://kivy.org/docs/guide/packaging-android-vm.html#hints-and-tips" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li>
+共享文件夹
+通常情况下，你的开发环境和工具链都在宿主机中，而 APK 的构建在客户机里面。好在 VirtualBox 提供了共享文件夹的功能，允许你的客户机直接读取宿主机中的某个文件夹。
+可以选中‘Permanent’（永久挂载）和 ‘Auto-mount’（自动挂载）这两个选项，这样把构建好的 APK 文件复制到宿主机就更方便了。写一个小脚本就可以很简单地实现自动复制或者移动这个步骤。
+</li>
+<li>
+复制粘贴
+默认情况下，宿主机和客户机的剪贴板是不能共享的。可以在“Settings -&gt; General -&gt; Advanced”（设置-&gt;通用-&gt;高级）中启用 “bi-directional”（双向复制粘贴）的选项。
+</li>
+<li>
+虚拟机快照
+如果你正在用 Kivy 开发环境的分支，同步最新版本有时候可能会出问题（Kivy 开发者尽量在避免这种情况）。所以可以在更新之前建立一个虚拟机快照来避免这类问题。这能让你很方便恢复到之前能用的状态。
+</li>
+<li>补充内存
+如果虚拟机分配的内存不够，可能会因为一些很神奇的错误导致编译失败，比如：
+<code>Bash
+arm-linux-androideabi-gcc: Internal error: Killed (program cc1)</code>
+如果出现了上面这种情况，检查一下 Kivy 虚拟机的剩余内存，如果内存不足，就在虚拟机设置里面多增加一些吧。</li>
+</ol>
+
+
+
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
+</body></html>

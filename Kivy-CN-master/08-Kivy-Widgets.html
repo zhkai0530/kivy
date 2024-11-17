@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)file:///C:/Users/Administrator/AppData/Local/Temp/MarkdownPadPreview.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>08-Kivy-Widgets</title>
+
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<!--<base href="file:\\\D:\pythonProject\Kivy-CN-master\">--><base href=".">
+</head>
+<body>
+<p>Title: Kivy Widgets
+Date: 2017-02-26
+Category: Kivy
+Tags: Python,Kivy</p>
+<h1>Kivy中文编程指南：控件</h1>
+<p><a href="https://kivy.org/docs/guide/widgets.html">英文原文</a></p>
+<h2>控件简介</h2>
+<p><a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget" title="kivy.uix.widget.Widget">控件<code>Widget</code></a>是 Kivy 图形界面中的基本元素。控件提供了一个<a href="https://kivy.org/docs/api-kivy.graphics.html#kivy.graphics.Canvas" title="kivy.graphics.Canvas">画布<code>Canvas</code></a>，这是用来在屏幕上进行绘制的。控件接收事件，并且对事件作出反应。想要对 <a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget" title="kivy.uix.widget.Widget">控件<code>Widget</code></a>进行更深入的了解，可以去看看这个模块的文档。</p>
+<h2>操作控件树</h2>
+<p>Kivy 以树的形式来组织控件。你的应用程序会有一个根控件，通常会含有若干的<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.children" title="kivy.uix.widget.Widget.children">子控件 <code>children</code></a>，这些子控件还可以有自己的子控件。一个控件的子控件会以 <a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.children" title="kivy.uix.widget.Widget.children"><code>children</code></a>属性的形式表述，这个属性是 Kivy 中的一个<a href="https://kivy.org/docs/api-kivy.properties.html#kivy.properties.ListProperty" title="kivy.properties.ListProperty">列表属性 <code>ListProperty</code></a></p>
+<p>可以用一下方法来操作控件树：</p>
+<ul>
+<li><a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.add_widget" title="kivy.uix.widget.Widget.add_widget"><code>add_widget()</code></a>: 添加一个控件作为子控件；</li>
+<li><a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.remove_widget" title="kivy.uix.widget.Widget.remove_widget"><code>remove_widget()</code></a>: 从子控件列表中去掉一个控件；</li>
+<li><a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.clear_widgets" title="kivy.uix.widget.Widget.clear_widgets"><code>clear_widgets()</code></a>: 清空一个控件的所有子控件。</li>
+</ul>
+<p>例如下面的代码，就是在一个盒式布局 BoxLayout 中添加一个按钮：</p>
+<p><code>Python
+layout = BoxLayout(padding=10)
+button = Button(text='My first button')
+layout.add_widget(button)</code></p>
+<p>这个按钮就添加到布局当中去了：按钮的 parent 属性会被设置为这个布局；这个按钮也会被添加到布局中的子控件列表。要把这个按钮从这个布局中删掉也很简单：</p>
+<p><code>Python
+layout.remove_widget(button)</code>
+移除了之后，这个按钮的 parent 属性就会被设置为 None，也会被从布局的子控件列表中移除。</p>
+<p>要是想清空一个控件中的所有自科技，那就用 <a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.clear_widgets" title="kivy.uix.widget.Widget.clear_widgets"><code>clear_widgets()</code></a>方法就可以了：</p>
+<p><code>Python
+layout.clear_widgets()</code></p>
+<h4>特别注意</h4>
+<p>千万别自己手动去操作子控件列表，除非你确定自己掌控得非常深入透彻。因为控件树是和绘图树联系在一起的。例如，如果你添加了一个控件到子控件列表，但没有添加这个新子控件的画布到绘图树上，那么就会出现这种情况：这个控件确实成了一个子控件，但是屏幕上不会显示出来。此外，如果你后续使用添加、移除、清空控件这些操作，可能还会遇到问题。</p>
+<h2>遍历控件树</h2>
+<p>控件类实例的<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.children" title="kivy.uix.widget.Widget.children">子控件<code>children</code></a>列表属性中包含了所有的子控件。所以可以用如下的方式来进行遍历：</p>
+<p>```Python
+root = BoxLayout()</p>
+<h1>... add widgets to root ...</h1>
+<p>for child in root.children:
+    print(child)
+```</p>
+<p>然而，这样的操作可得谨慎使用。如果你要用之前一节中提到的方法来修改这个子控件列表电话，请一定用下面这种方法来做一下备份：</p>
+<p><code>Python
+for child in root.children[:]:
+    # manipulate the tree. For example here, remove all widgets that have a
+    # width
+    if child.width  100:
+        root.remove_widget(child)</code></p>
+<p>默认情况下，控件是不会对子控件的尺寸/位置进行改变的。<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.pos" title="kivy.uix.widget.Widget.pos">位置属性 <code>pos</code></a>是屏幕坐标系上的绝对值（除非你使用<a href="https://kivy.org/docs/api-kivy.uix.relativelayout.html#module-kivy.uix.relativelayout" title="kivy.uix.relativelayout">相对布局<code>relativelayout</code></a>，这个以后再说），而<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size" title="kivy.uix.widget.Widget.size">尺寸属性 <code>size</code></a>就是一个绝对的尺寸大小。</p>
+<h2>控件索引Z</h2>
+<p>控件绘制的顺序，是基于各个控件在控件树中的位置。<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.add_widget" title="kivy.uix.widget.Widget.add_widget">添加控件方法 <code>add_widget</code></a> 可以接收一个索引参数，这样就能指定该新增控件在控件树中的位置。</p>
+<p><code>Python
+root.add_widget(widget, index)</code></p>
+<p>索引值小的控件会被绘制在索引值大的控件之上。一定要记住，默认值是 0 ，所以后添加的控件总会在所有控件的最顶层，除非指定了索引值。</p>
+<h2>整理布局</h2>
+<p><a href="https://kivy.org/docs/api-kivy.uix.layout.html#module-kivy.uix.layout" title="kivy.uix.layout">布局 <code>layout</code></a>是一种特别的控件，它会控制自己子控件的尺寸和位置。有各种不同的布局，这些布局分别为子控件提供拜托你个的自动组织整理。这些布局使用<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint" title="kivy.uix.widget.Widget.size_hint">尺寸推测 <code>size_hint</code></a>和<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.pos_hint" title="kivy.uix.widget.Widget.pos_hint">位置推测 <code>pos_hint</code></a>这两个属性来决定<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.children" title="kivy.uix.widget.Widget.children">子控件<code>children</code></a>的<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size" title="kivy.uix.widget.Widget.size">尺寸 <code>size</code></a> 和 <a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.pos" title="kivy.uix.widget.Widget.pos">位置<code>pos</code></a>。</p>
+<p><strong>盒式布局 BoxLayout</strong>: 所有控件充满整个空间，以互相挨着的方块的方式来分布，横着或者竖着排列都可以。子控件的  size_hint 属性可以用来改变每个子控件的比例，也可以设置为固定尺寸。</p>
+<p><img src="./08-Kivy-Widgets_files/boxlayout1.gif" alt="../_images/boxlayout1.gif"> <img src="./08-Kivy-Widgets_files/gridlayout1.gif" alt="../_images/gridlayout1.gif"> <img src="./08-Kivy-Widgets_files/stacklayout1.gif" alt="../_images/stacklayout1.gif"> <img src="./08-Kivy-Widgets_files/anchorlayout1.gif" alt="../_images/anchorlayout1.gif"><img src="./08-Kivy-Widgets_files/floatlayout1.gif" alt="../_images/floatlayout1.gif"></p>
+<p><strong>网格布局 GridLayout</strong>: 以一张网格的方式来安排控件。你必须指定好网格的维度，确定好分成多少格，这样 Kivy 才能计算出每个元素的尺寸并且确定如何安排这些元素的位置。</p>
+<p><strong>栈状布局 StackLayout</strong>: 挨着放一个个控件，彼此邻近，在某一个维度上有固定大小，而使它们填充整个空间。 这适合用来显示相同预定义大小的子控件。</p>
+<p><strong>锚式布局 AnchorLayout</strong>: 一种非常简单的布局，只关注子控件的位置。 将子控件放在布局的边界位置。 不支持size_hint。</p>
+<p><strong>浮动布局 FloatLayout</strong>: 允许放置具任意位置和尺寸的子控件，可以是绝对尺寸，也可以是相对布局的相对尺寸。 默认的 size_hint（1，1）会让每个子控件都与整个布局一样大，所以如果你多个子控件就要修改这个值。可以把 size<em>hint 设置成 (None, None)，这样就可以使用 size 这个绝对尺寸属性。控件也支持 pos</em>hint，这个属性是一个 dict 词典，用来设置相对布局的位置。</p>
+<p><strong>相对布局 RelativeLayout</strong>: 和浮动布局 FloatLayout 差不多，不同之处在于子控件的位置是相对于布局空间的，而不是相对于屏幕。</p>
+<p>想要深入理解各种布局的话，可以仔细阅读各种文档。</p>
+<p><a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint" title="kivy.uix.widget.Widget.size_hint"><code>size_hint</code></a> 和 <a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.pos_hint" title="kivy.uix.widget.Widget.pos_hint"><code>pos_hint</code></a>:</p>
+<ul>
+<li><a href="https://kivy.org/docs/api-kivy.uix.floatlayout.html#module-kivy.uix.floatlayout" title="kivy.uix.floatlayout"><code>floatlayout</code></a></li>
+<li><a href="https://kivy.org/docs/api-kivy.uix.boxlayout.html#module-kivy.uix.boxlayout" title="kivy.uix.boxlayout"><code>boxlayout</code></a></li>
+<li><a href="https://kivy.org/docs/api-kivy.uix.gridlayout.html#module-kivy.uix.gridlayout" title="kivy.uix.gridlayout"><code>gridlayout</code></a></li>
+<li><a href="https://kivy.org/docs/api-kivy.uix.stacklayout.html#module-kivy.uix.stacklayout" title="kivy.uix.stacklayout"><code>stacklayout</code></a></li>
+<li><a href="https://kivy.org/docs/api-kivy.uix.relativelayout.html#module-kivy.uix.relativelayout" title="kivy.uix.relativelayout"><code>relativelayout</code></a></li>
+<li><a href="https://kivy.org/docs/api-kivy.uix.anchorlayout.html#module-kivy.uix.anchorlayout" title="kivy.uix.anchorlayout"><code>anchorlayout</code></a></li>
+</ul>
+<p><a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint" title="kivy.uix.widget.Widget.size_hint"><code>size_hint</code></a> 是一个 <a href="https://kivy.org/docs/api-kivy.properties.html#kivy.properties.ReferenceListProperty" title="kivy.properties.ReferenceListProperty">引用列表属性 <code>ReferenceListProperty</code></a> ，包括 <a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint_x" title="kivy.uix.widget.Widget.size_hint_x"><code>size_hint_x</code></a> 和<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint_y" title="kivy.uix.widget.Widget.size_hint_y"><code>size_hint_y</code></a> 两个变量。接收的变量值是从0到1的各种数值，或者 None， 默认值为 (1, 1)。这表示如果控件处在布局之内，布局将会在两个方向分配全部尺寸（相对于布局大小）给该控件。</p>
+<p>举个例子，设置<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint" title="kivy.uix.widget.Widget.size_hint"><code>size_hint</code></a> 为 (0.5, 0.8)，就会给该<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget" title="kivy.uix.widget.Widget">控件<code>Widget</code></a> 分配<a href="https://kivy.org/docs/api-kivy.uix.layout.html#module-kivy.uix.layout" title="kivy.uix.layout">布局 <code>layout</code></a> 内50% 宽，80% 高的尺寸。</p>
+<p>例如下面这个例子：</p>
+<p><code>Python
+BoxLayout:
+    Button:
+        text: 'Button 1'
+        # default size_hint is 1, 1, we don't need to specify it explicitly
+        # however it's provided here to make things clear
+        size_hint: 1, 1</code></p>
+<p>加载 Kivy 目录：</p>
+<p><code>Python
+cd $KIVYDIR/examples/demo/kivycatalog
+python main.py</code></p>
+<p>把上面代码中的 $KIVYDIR  替换成你的 Kivy 安装位置。在左边点击标注有  Box Layout  的按钮。 然后将上面的代码粘贴到窗口右侧的编辑器内。</p>
+<p><img src="./08-Kivy-Widgets_files/size_hint[B].jpg" alt="../_images/size_hint[B].jpg"></p>
+<p>然后你就可以看到上图这样的界面了，这个按钮 Button 会占据整个布局<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size" title="kivy.uix.widget.Widget.size">尺寸 <code>size</code></a>的 100%。</p>
+<p>修改<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint_x" title="kivy.uix.widget.Widget.size_hint_x"><code>size_hint_x</code></a>/<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint_y" title="kivy.uix.widget.Widget.size_hint_y"><code>size_hint_y</code></a> 为 .5 这就会把<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget" title="kivy.uix.widget.Widget">控件 <code>Widget</code></a> 调整为<a href="https://kivy.org/docs/api-kivy.uix.layout.html#module-kivy.uix.layout" title="kivy.uix.layout">布局 <code>layout</code></a> 的50% <a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.width" title="kivy.uix.widget.Widget.width">宽度 <code>width</code></a>/<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.height" title="kivy.uix.widget.Widget.height">高度 <code>height</code></a>。</p>
+<p><img src="./08-Kivy-Widgets_files/size_hint[b_].jpg" alt="../_images/size_hint[b_].jpg"></p>
+<p>这时候效果如上图所示，虽然我们已经同时指定了 <a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint_x" title="kivy.uix.widget.Widget.size_hint_x"><code>size_hint_x</code></a> 和 <a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint_y" title="kivy.uix.widget.Widget.size_hint_y"><code>size_hint_y</code></a> 为 .5，但似乎只有对 <a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint_x" title="kivy.uix.widget.Widget.size_hint_x"><code>size_hint_x</code></a> 的修改起作用了。这是因为在<a href="https://kivy.org/docs/api-kivy.uix.boxlayout.html#module-kivy.uix.boxlayout" title="kivy.uix.boxlayout">盒式布局 <code>boxlayout</code></a>中，当<a href="https://kivy.org/docs/api-kivy.uix.boxlayout.html#kivy.uix.boxlayout.BoxLayout.orientation" title="kivy.uix.boxlayout.BoxLayout.orientation"><code>orientation</code></a>被设置为竖直方向（vertical） 的时候，<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint_y" title="kivy.uix.widget.Widget.size_hint_y"><code>size_hint_y</code></a> 由布局来控制，而如果<a href="https://kivy.org/docs/api-kivy.uix.boxlayout.html#kivy.uix.boxlayout.BoxLayout.orientation" title="kivy.uix.boxlayout.BoxLayout.orientation"><code>orientation</code></a> 被设置为水平方向（horizontal）的时候， <a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint_x" title="kivy.uix.widget.Widget.size_hint_x"><code>size_hint_x</code></a> 由布局来控制，所以这些情况手动设定就无效了。 这些受控维度的尺寸，是根据<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.children" title="kivy.uix.widget.Widget.children">子控件 <code>children</code></a> 在 <a href="https://kivy.org/docs/api-kivy.uix.boxlayout.html#module-kivy.uix.boxlayout" title="kivy.uix.boxlayout"><code>盒式布局 boxlayout</code></a>中的总编号来计算的。在上面的例子中，这个子控件的<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint_y" title="kivy.uix.widget.Widget.size_hint_y"><code>size_hint_y</code></a> 是受控的(.5/.5 = 1)。所以，这里控件就占据了上层布局的整个高度。</p>
+<p>接下来咱们再添加一个<a href="https://kivy.org/docs/api-kivy.uix.button.html#kivy.uix.button.Button" title="kivy.uix.button.Button">按钮 <code>Button</code></a>到这个 <a href="https://kivy.org/docs/api-kivy.uix.layout.html#module-kivy.uix.layout" title="kivy.uix.layout">布局 <code>layout</code></a>看看有什么效果。</p>
+<p><img src="./08-Kivy-Widgets_files/size_hint[bb].jpg" alt="../_images/size_hint[bb].jpg"></p>
+<p><a href="https://kivy.org/docs/api-kivy.uix.boxlayout.html#module-kivy.uix.boxlayout" title="kivy.uix.boxlayout">盒式布局 <code>boxlayout</code></a> 默认对其所有的<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.children" title="kivy.uix.widget.Widget.children">子控件 <code>children</code></a>分配了等大的空间。在咱们这个例子里面，比例是50-50，因为有两个<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.children" title="kivy.uix.widget.Widget.children">子控件 <code>children</code></a>。那么接下来咱们就对其中的一个子控件设置一下 size_hint，然后看看效果怎么样。</p>
+<p><img src="./08-Kivy-Widgets_files/size_hint[oB].jpg" alt="../_images/size_hint[oB].jpg"></p>
+<p>从上图可以看出，如果一个子控件有了一个指定的 <a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint" title="kivy.uix.widget.Widget.size_hint"><code>size_hint</code></a>，这就会决定该<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget" title="kivy.uix.widget.Widget">控件 <code>Widget</code></a>使用<a href="https://kivy.org/docs/api-kivy.uix.boxlayout.html#module-kivy.uix.boxlayout" title="kivy.uix.boxlayout">盒式布局 <code>boxlayout</code></a>提供的空间中的多大比例，来作为自己的<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size" title="kivy.uix.widget.Widget.size">尺寸 <code>size</code></a> 。在我们这个例子中，第一个<a href="https://kivy.org/docs/api-kivy.uix.button.html#kivy.uix.button.Button" title="kivy.uix.button.Button">按钮 <code>Button</code></a> 的<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint_x" title="kivy.uix.widget.Widget.size_hint_x"><code>size_hint_x</code></a>设置为了 .5。那么这个控件分配到的空间计算方法如下：</p>
+<p>```Python
+first child's size<em>hint divided by
+first child's size</em>hint + second child's size_hint + ...n(no of children)</p>
+<p>.5/(.5+1) = .333...
+```</p>
+<p>盒式布局 BoxLayout 的剩余<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.width" title="kivy.uix.widget.Widget.width">宽度 <code>width</code></a>会分配给另外的一个<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.children" title="kivy.uix.widget.Widget.children">子控件 <code>children</code></a>。在我们这个例子中，这就意味着第二个<a href="https://kivy.org/docs/api-kivy.uix.button.html#kivy.uix.button.Button" title="kivy.uix.button.Button">按钮 <code>Button</code></a> 会占据整个<a href="https://kivy.org/docs/api-kivy.uix.layout.html#module-kivy.uix.layout" title="kivy.uix.layout">布局 <code>layout</code></a>的 66.66% <a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.width" title="kivy.uix.widget.Widget.width">宽度 <code>width</code></a> 。</p>
+<p>修改 <a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint" title="kivy.uix.widget.Widget.size_hint"><code>size_hint</code></a> 探索一下来多适应一下吧。</p>
+<p>如果你想要控制一个<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget" title="kivy.uix.widget.Widget">控件 <code>Widget</code></a>的绝对<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size" title="kivy.uix.widget.Widget.size">尺寸 <code>size</code></a> ，可以把<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint_x" title="kivy.uix.widget.Widget.size_hint_x"><code>size_hint_x</code></a>/<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint_y" title="kivy.uix.widget.Widget.size_hint_y"><code>size_hint_y</code></a>当中的一个或者两个都设置成 None，这样的话该控件的<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.width" title="kivy.uix.widget.Widget.width">宽度 <code>width</code></a> 和<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.height" title="kivy.uix.widget.Widget.height">高度 <code>height</code></a>的属性值就会生效了。</p>
+<p><a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.pos_hint" title="kivy.uix.widget.Widget.pos_hint"><code>pos_hint</code></a> 是一个词典 dict，默认值是空。相比于<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint" title="kivy.uix.widget.Widget.size_hint"><code>size_hint</code></a>，布局对<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.pos_hint" title="kivy.uix.widget.Widget.pos_hint"><code>pos_hint</code></a>的处理方式有些不同，不过大体上你还是可以对<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.pos" title="kivy.uix.widget.Widget.pos"><code>pos</code></a> 的各种属性设定某个值来设定<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget" title="kivy.uix.widget.Widget">控件 <code>Widget</code></a>在<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.parent" title="kivy.uix.widget.Widget.parent">父控件 <code>parent</code></a>中的相对位置（可以设定的属性包括：<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.x" title="kivy.uix.widget.Widget.x"><code>x</code></a>, <a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.y" title="kivy.uix.widget.Widget.y"><code>y</code></a>, <a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.right" title="kivy.uix.widget.Widget.right"><code>right</code></a>, <a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.top" title="kivy.uix.widget.Widget.top"><code>top</code></a>, <a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.center_x" title="kivy.uix.widget.Widget.center_x"><code>center_x</code></a>, <a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.center_y" title="kivy.uix.widget.Widget.center_y"><code>center_y</code></a>）。</p>
+<p>咱们用下面 kivycatalog 中的代码来可视化地理解一下<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.pos_hint" title="kivy.uix.widget.Widget.pos_hint"><code>pos_hint</code></a>：</p>
+<p>```Python
+FloatLayout:
+    Button:
+        text: "We Will"
+        pos: 100, 100
+        size<em>hint: .2, .4
+    Button:
+        text: "Wee Wiill"
+        pos: 200, 200
+        size</em>hint: .4, .2</p>
+<pre><code>Button:
+    text: "ROCK YOU!!"
+    pos_hint: {'x': .3, 'y': .6}
+    size_hint: .5, .2
+</code></pre>
+
+<p>```</p>
+<p>这份代码的输出效果如下图所示：</p>
+<p><img src="./08-Kivy-Widgets_files/pos_hint.jpg" alt="../_images/pos_hint.jpg"></p>
+<p>说了半天<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size_hint" title="kivy.uix.widget.Widget.size_hint"><code>size_hint</code></a>，你不妨自己试试探索一下 <a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.pos_hint" title="kivy.uix.widget.Widget.pos_hint"><code>pos_hint</code></a>，来理解一下这个属性对控件位置的效果。</p>
+<h2>给布局添加背景</h2>
+<p>关于布局，有一个问题经常被问道：</p>
+<p>“怎么给一个布局添加背景图片/颜色/视频/等等......”</p>
+<p>本来默认的各种布局都是没有视觉呈现的：因为布局不像控件，布局是默认不含有绘图指令的。不过呢，还是你可以给一个布局实例添上绘图指令，也就可以添加一个彩色背景了：</p>
+<p>在 Python 中的实现方法：</p>
+<p>```Python
+from kivy.graphics import Color, Rectangle</p>
+<p>with layout<em>instance.canvas.before:
+    Color(0, 1, 0, 1) # green; colors range from 0-1 instead of 0-255
+    self.rect = Rectangle(size=layout</em>instance.size,
+                           pos=layout_instance.pos)
+```</p>
+<p>然而很不幸，这样只能在布局的初始化位置以布局的初始尺寸绘制一个矩形。所以还要对布局的尺寸和位置变化进行监听，然后对矩形的尺寸位置进行更新，这样才能保证这个矩形一直绘制在布局的内部。可以用如下方式实现：</p>
+<p>```Python
+with layout<em>instance.canvas.before:
+    Color(0, 1, 0, 1) # green; colors range from 0-1 instead of 0-255
+    self.rect = Rectangle(size=layout</em>instance.size,
+                           pos=layout_instance.pos)</p>
+<p>def update_rect(instance, value):
+    instance.rect.pos = instance.pos
+    instance.rect.size = instance.size</p>
+<h1>listen to size and position changes</h1>
+<p>layout<em>instance.bind(pos=update</em>rect, size=update_rect)
+```</p>
+<p>在 kv 文件中：</p>
+<p><code>Python
+FloatLayout:
+    canvas.before:
+        Color:
+            rgba: 0, 1, 0, 1
+        Rectangle:
+            # self here refers to the widget i.e BoxLayout
+            pos: self.pos
+            size: self.size</code></p>
+<p>上面的 Kv 文件中的生命，就建立了一个隐含的绑定：上面 Kv 代码中的最后两行保证了矩形的<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.pos" title="kivy.uix.widget.Widget.pos">位置 <code>pos</code></a>和<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.size" title="kivy.uix.widget.Widget.size">尺寸 <code>size</code></a>会在<a href="https://kivy.org/docs/api-kivy.uix.floatlayout.html#module-kivy.uix.floatlayout" title="kivy.uix.floatlayout">浮动布局 <code>floatlayout</code></a>的<a href="https://kivy.org/docs/api-kivy.uix.widget.html#kivy.uix.widget.Widget.pos" title="kivy.uix.widget.Widget.pos">位置 <code>pos</code></a>发生变化的时候进行更新。</p>
+<p>接下来咱们把上面的代码片段放进 Kivy 应用里面。</p>
+<p>纯 Python 方法：</p>
+<p>```Python
+from kivy.app import App
+from kivy.graphics import Color, Rectangle
+from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.button import Button</p>
+<p>class RootWidget(FloatLayout):</p>
+<pre><code>def __init__(self, **kwargs):
+    # make sure we aren't overriding any important functionality
+    super(RootWidget, self).__init__(**kwargs)
+
+    # let's add a Widget to this layout
+    self.add_widget(
+        Button(
+            text="Hello World",
+            size_hint=(.5, .5),
+            pos_hint={'center_x': .5, 'center_y': .5}))
+</code></pre>
+
+<p>class MainApp(App):</p>
+<pre><code>def build(self):
+    self.root = root = RootWidget()
+    root.bind(size=self._update_rect, pos=self._update_rect)
+
+    with root.canvas.before:
+        Color(0, 1, 0, 1)  # green; colors range from 0-1 not 0-255
+        self.rect = Rectangle(size=root.size, pos=root.pos)
+    return root
+
+def _update_rect(self, instance, value):
+    self.rect.pos = instance.pos
+    self.rect.size = instance.size
+</code></pre>
+
+<p>if <strong>name</strong> == '<strong>main</strong>':
+    MainApp().run()
+```</p>
+<p>使用 Kv 语言：</p>
+<p>```Python
+from kivy.app import App
+from kivy.lang import Builder</p>
+<p>root = Builder.load<em>string('''
+FloatLayout:
+    canvas.before:
+        Color:
+            rgba: 0, 1, 0, 1
+        Rectangle:
+            # self here refers to the widget i.e FloatLayout
+            pos: self.pos
+            size: self.size
+    Button:
+        text: 'Hello World!!'
+        size</em>hint: .5, .5
+        pos_hint: {'center<em>x':.5, 'center</em>y': .5}
+''')</p>
+<p>class MainApp(App):</p>
+<pre><code>def build(self):
+    return root
+</code></pre>
+
+<p>if <strong>name</strong> == '<strong>main</strong>':
+    MainApp().run()
+```</p>
+<p>上面这两个应用的效果都如下图所示：
+<img src="./08-Kivy-Widgets_files/layout_background.png" alt="../_images/layout_background.png"></p>
+<h3>给<strong>自定义布局规则/类</strong>增加背景色</h3>
+<p>上面那一段中咱们对布局实例增加背景的方法，如果用到很多歌布局里面，那就很快变得特别麻烦了。要解决这种需求，就可以基于布局类 Layout 创建一个自定义的布局子类，给自定义的这个类增加一个背景。</p>
+<p>使用 Python：</p>
+<p>```Python
+from kivy.app import App
+from kivy.graphics import Color, Rectangle
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.image import AsyncImage</p>
+<p>class RootWidget(BoxLayout):
+    pass</p>
+<p>class CustomLayout(FloatLayout):</p>
+<pre><code>def __init__(self, **kwargs):
+    # make sure we aren't overriding any important functionality
+    super(CustomLayout, self).__init__(**kwargs)
+
+    with self.canvas.before:
+        Color(0, 1, 0, 1)  # green; colors range from 0-1 instead of 0-255
+        self.rect = Rectangle(size=self.size, pos=self.pos)
+
+    self.bind(size=self._update_rect, pos=self._update_rect)
+
+def _update_rect(self, instance, value):
+    self.rect.pos = instance.pos
+    self.rect.size = instance.size
+</code></pre>
+
+<p>class MainApp(App):</p>
+<pre><code>def build(self):
+    root = RootWidget()
+    c = CustomLayout()
+    root.add_widget(c)
+    c.add_widget(
+        AsyncImage(
+            source="http://www.everythingzoomer.com/wp-content/uploads/2013/01/Monday-joke-289x277.jpg",
+            size_hint= (1, .5),
+            pos_hint={'center_x':.5, 'center_y':.5}))
+    root.add_widget(AsyncImage(source='http://www.stuffistumbledupon.com/wp-content/uploads/2012/05/Have-you-seen-this-dog-because-its-awesome-meme-puppy-doggy.jpg'))
+    c = CustomLayout()
+    c.add_widget(
+        AsyncImage(
+            source="http://www.stuffistumbledupon.com/wp-content/uploads/2012/04/Get-a-Girlfriend-Meme-empty-wallet.jpg",
+            size_hint= (1, .5),
+            pos_hint={'center_x':.5, 'center_y':.5}))
+    root.add_widget(c)
+    return root
+</code></pre>
+
+<p>if <strong>name</strong> == '<strong>main</strong>':
+    MainApp().run()
+```</p>
+<p>使用 Kv 语言：</p>
+<p>```Python
+from kivy.app import App
+from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.boxlayout import BoxLayout
+from kivy.lang import Builder</p>
+<p>Builder.load_string('''
+<customlayout>
+    canvas.before:
+        Color:
+            rgba: 0, 1, 0, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size</customlayout></p>
+<p><rootwidget>
+    CustomLayout:
+        AsyncImage:
+            source: 'http://www.everythingzoomer.com/wp-content/uploads/2013/01/Monday-joke-289x277.jpg'
+            size<em>hint: 1, .5
+            pos</em>hint: {'center<em>x':.5, 'center<em>y': .5}
+    AsyncImage:
+        source: 'http://www.stuffistumbledupon.com/wp-content/uploads/2012/05/Have-you-seen-this-dog-because-its-awesome-meme-puppy-doggy.jpg'
+    CustomLayout
+        AsyncImage:
+            source: 'http://www.stuffistumbledupon.com/wp-content/uploads/2012/04/Get-a-Girlfriend-Meme-empty-wallet.jpg'
+            size</em>hint: 1, .5
+            pos</em>hint: {'center<em>x':.5, 'center</em>y': .5}
+''')</rootwidget></p>
+<p>class RootWidget(BoxLayout):
+    pass</p>
+<p>class CustomLayout(FloatLayout):
+    pass</p>
+<p>class MainApp(App):</p>
+<pre><code>def build(self):
+    return RootWidget()
+</code></pre>
+
+<p>if <strong>name</strong> == '<strong>main</strong>':
+    MainApp().run()
+```</p>
+<p>上面这两个应用的效果都如下图所示：</p>
+<p><img src="./08-Kivy-Widgets_files/custom_layout_background.png" alt="../_images/custom_layout_background.png"></p>
+<p>在自定义布局类中定义了背景之后，就是要确保在自定义布局的各个实例中使用到这个新特性。</p>
+<p>首先，要在<strong>全局上</strong>增加一个图形或者颜色给内置的 Kivy 布局的背景，这就需要将所用布局的默认 Kv 规则进行覆盖。</p>
+<p>就拿网格布局 GridLayout 举例吧：</p>
+<p><code>Python
+&lt;GridLayout&gt;
+    canvas.before:
+        Color:
+            rgba: 0, 1, 0, 1
+        BorderImage:
+            source: '../examples/widgets/sequenced_images/data/images/button_white.png'
+            pos: self.pos
+            size: self.size</code></p>
+<p>接下来把这段代码放到一个 Kivy 应用里面：</p>
+<p>```Python
+from kivy.app import App
+from kivy.uix.floatlayout import FloatLayout
+from kivy.lang import Builder</p>
+<p>Builder.load<em>string('''
+<gridlayout>
+    canvas.before:
+        BorderImage:
+            # BorderImage behaves like the CSS BorderImage
+            border: 10, 10, 10, 10
+            source: '../examples/widgets/sequenced</gridlayout></em>images/data/images/button_white.png'
+            pos: self.pos
+            size: self.size</p>
+<p><rootwidget>
+    GridLayout:
+        size<em>hint: .9, .9
+        pos</em>hint: {'center<em>x': .5, 'center<em>y': .5}
+        rows:1
+        Label:
+            text: "I don't suffer from insanity, I enjoy every minute of it"
+            text</em>size: self.width-20, self.height-20
+            valign: 'top'
+        Label:
+            text: "When I was born I was so surprised; I didn't speak for a year and a half."
+            text</em>size: self.width-20, self.height-20
+            valign: 'middle'
+            halign: 'center'
+        Label:
+            text: "A consultant is someone who takes a subject you understand and makes it sound confusing"
+            text_size: self.width-20, self.height-20
+            valign: 'bottom'
+            halign: 'justify'
+''')</rootwidget></p>
+<p>class RootWidget(FloatLayout):
+    pass</p>
+<p>class MainApp(App):</p>
+<pre><code>def build(self):
+    return RootWidget()
+</code></pre>
+
+<p>if <strong>name</strong> == '<strong>main</strong>':
+    MainApp().run()
+```</p>
+<p>效果大概如下图所示：</p>
+<p><img src="./08-Kivy-Widgets_files/global_background.png" alt="../_images/global_background.png"></p>
+<p>我们已经对网格布局 GridLayout 类的规则进行了覆盖，所以接下来在应用中使用这个类就都会显示那幅图片了。</p>
+<p><strong>动画背景</strong>怎么弄呢？</p>
+<p>就像在矩形Rectangle/ 边界图像BorderImage /椭圆Ellipse/等里面添加设置绘图指令一样，可以用一个特定的纹理属性 texture ：</p>
+<p><code>Python
+Rectangle:
+    texture: reference to a texture</code></p>
+<p>可以用下面的代码实现一个动画背景：</p>
+<p>```Python
+from kivy.app import App
+from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.image import Image
+from kivy.properties import ObjectProperty
+from kivy.lang import Builder</p>
+<p>Builder.load<em>string('''
+<customlayout>
+    canvas.before:
+        BorderImage:
+            # BorderImage behaves like the CSS BorderImage
+            border: 10, 10, 10, 10
+            texture: self.background</customlayout></em>image.texture
+            pos: self.pos
+            size: self.size</p>
+<p><rootwidget>
+    CustomLayout:
+        size<em>hint: .9, .9
+        pos</em>hint: {'center<em>x': .5, 'center<em>y': .5}
+        rows:1
+        Label:
+            text: "I don't suffer from insanity, I enjoy every minute of it"
+            text</em>size: self.width-20, self.height-20
+            valign: 'top'
+        Label:
+            text: "When I was born I was so surprised; I didn't speak for a year and a half."
+            text</em>size: self.width-20, self.height-20
+            valign: 'middle'
+            halign: 'center'
+        Label:
+            text: "A consultant is someone who takes a subject you understand and makes it sound confusing"
+            text_size: self.width-20, self.height-20
+            valign: 'bottom'
+            halign: 'justify'
+''')</rootwidget></p>
+<p>class CustomLayout(GridLayout):</p>
+<pre><code>background_image = ObjectProperty(
+    Image(
+        source='../examples/widgets/sequenced_images/data/images/button_white_animated.zip',
+        anim_delay=.1))
+</code></pre>
+
+<p>class RootWidget(FloatLayout):
+    pass</p>
+<p>class MainApp(App):</p>
+<pre><code>def build(self):
+    return RootWidget()
+</code></pre>
+
+<p>if <strong>name</strong> == '<strong>main</strong>':
+    MainApp().run()
+```</p>
+<p>要理解这里到底发生了什么，得从第 13 行开始看：</p>
+<p><code>Python
+texture: self.background_image.texture</code></p>
+<p>这里是指定让边界图像 BorderImage 的纹理属性在背景图像 background<em>image 的纹理属性发生更新的时候进行同步更新。背景图像 background</em>image 属性的定义是在第 40 行：</p>
+<p><code>Python
+background_image = ObjectProperty(...</code></p>
+<p>这一句代码是将背景图像 background<em>image 设置成一个<a href="https://kivy.org/docs/api-kivy.properties.html#kivy.properties.ObjectProperty" title="kivy.properties.ObjectProperty">对象属性 <code>ObjectProperty</code></a>，这样就可以在其中添加一个<a href="https://kivy.org/docs/api-kivy.uix.image.html#kivy.uix.image.Image" title="kivy.uix.image.Image">图形控件 <code>Image</code></a>。图像控件有一个纹理属性（texture property）；在前面的  self.background</em>image.texture 这句代码中，就是建立了一个名为 texture 的到这个属性的引用。<a href="https://kivy.org/docs/api-kivy.uix.image.html#kivy.uix.image.Image" title="kivy.uix.image.Image">图形控件 <code>Image</code></a> 支持动画（animation）：随着动画的改变，图像的纹理会同步更新，在这个过程中，边界图像 BorderImage 指令的 texture 纹理属性也会同步更新。</p>
+<p>（译者注：texture of BorderImage instruction，这里我对 instruction 的翻译应该是不太对的，不过我还没理清楚该怎么表述。）</p>
+<p>也可以直接传递自定义数据到纹理属性 texture。更多细节可以参考<a href="https://kivy.org/docs/api-kivy.graphics.texture.html#kivy.graphics.texture.Texture" title="kivy.graphics.texture.Texture">纹理 <code>Texture</code> 的文档</a>。</p>
+<h2>网状布局</h2>
+<p>嗯，看看这个过程如何扩展是很有趣的。</p>
+<h2>尺寸和位置度量</h2>
+<p>Kivy 的默认长度单位是像素 pixel，所有的尺寸和位置都用这个单位来表达。你也可以用其他单位来衡量，在跨平台多种设备的时候，这有助于实现更好的连续性体验（这些设备会把尺寸自动转换到像素）。</p>
+<p>可用单位包括 <a href="https://kivy.org/docs/api-kivy.metrics.html#kivy.metrics.pt" title="kivy.metrics.pt"><code>pt</code></a>， <a href="https://kivy.org/docs/api-kivy.metrics.html#kivy.metrics.mm" title="kivy.metrics.mm"><code>mm</code></a>，<a href="https://kivy.org/docs/api-kivy.metrics.html#kivy.metrics.cm" title="kivy.metrics.cm"><code>cm</code></a>, <a href="https://kivy.org/docs/api-kivy.metrics.html#kivy.metrics.inch" title="kivy.metrics.inch"><code>inch</code></a>， <a href="https://kivy.org/docs/api-kivy.metrics.html#kivy.metrics.dp" title="kivy.metrics.dp"><code>dp</code></a> and <a href="https://kivy.org/docs/api-kivy.metrics.html#kivy.metrics.sp" title="kivy.metrics.sp"><code>sp</code></a>。可以在<a href="https://kivy.org/docs/api-kivy.metrics.html#module-kivy.metrics" title="kivy.metrics">度量文档 <code>metrics</code></a> 中了解更多相关内容。</p>
+<p>你还可以探索一下<a href="https://kivy.org/docs/api-kivy.modules.screen.html#module-kivy.modules.screen" title="kivy.modules.screen">屏幕模块 <code>screen</code></a>的用法，这个可以模拟出不同设备的屏幕，供测试应用。</p>
+<h2>使用屏幕管理器进行屏幕分割</h2>
+<p>如果你的应用程序要包含多个程序，那可能就需要从一个<a href="https://kivy.org/docs/api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.Screen" title="kivy.uix.screenmanager.Screen">屏幕 <code>Screen</code></a>到另一个<a href="https://kivy.org/docs/api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.Screen" title="kivy.uix.screenmanager.Screen">屏幕 <code>Screen</code></a>提供一个导航的通道。幸运的是，正好有一个<a href="https://kivy.org/docs/api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.ScreenManager" title="kivy.uix.screenmanager.ScreenManager">屏幕管理器类<code>ScreenManager</code></a>，这个类允许你来定义分开的各个屏幕，设置屏幕管理器的<a href="https://kivy.org/docs/api-kivy.uix.screenmanager.html#kivy.uix.screenmanager.TransitionBase" title="kivy.uix.screenmanager.TransitionBase"><code>TransitionBase</code></a>就可以实现从一个屏幕到另一个屏幕的跳转导航。</p>
+
+
+
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
+</body></html>

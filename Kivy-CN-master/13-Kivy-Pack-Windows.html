@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)file:///C:/Users/Administrator/AppData/Local/Temp/MarkdownPadPreview.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>13-Kivy-Pack-Windows</title>
+
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<!--<base href="file:\\\D:\pythonProject\Kivy-CN-master\">--><base href=".">
+</head>
+<body>
+<p>Title: Kivy Pack Windows
+Date: 2017-03-01
+Category: Kivy
+Tags: Python,Kivy</p>
+<h1>Kivy中文编程指南：打包为 Windows 系统可执行文件</h1>
+<p><a href="https://kivy.org/docs/guide/packaging-windows.html">英文原文</a></p>
+<h4>特别注意</h4>
+<p>本文档仅适用于<code>1.9.1</code>以及更新版本的 Kivy。</p>
+<p>要打包 Windows 平台的应用程序，<strong>只能在 Windows 操作系统下完成</strong>。另外一定要注意，本文后续内容中都是在 <strong>wheels</strong> 安装的 Kivy 下通过测试的，如果你用其他安装方法，参考结尾部分吧。</p>
+<p>打包出来的程序是 32 位还是 64 位<strong>只取决于</strong>你打包使用的 Python，而不取决于 Windows 操作系统的版本。</p>
+<h2>依赖包</h2>
+<ul>
+<li><strong>最新版本</strong>的Kivy （参考安装指南 <a href="https://kivy.org/docs/installation/installation-windows.html#installation-windows">Installation on Windows</a>）</li>
+<li>PyInstaller 3.1或者更新的版本 (<code>pip install --upgrade pyinstaller</code>)。</li>
+</ul>
+<p>（译者注：PyInstaller 目前（2017年03月01日）还不支持 Python 3.6 哦~，好多朋友都坑到这里了，所以推荐使用 3.5.2。）</p>
+<h1>PyInstaller 的基本用法</h1>
+<p>本节内容是要让 PyInstaller（3.1或者更新版本）包含 Kivy 的 Hook（钩子， Windows 消息处理机制的一个平台）。要覆盖默认的 Hook ，下面的样例代码需要稍微修改一下。参考 <a href="https://kivy.org/docs/guide/packaging-windows.html#overwrite-win-hook"> 覆盖默认 Hook</a>。</p>
+<h2>打包一个简单的 APP</h2>
+<p>这个例子里面，咱们要把样例中的 <strong>touchtracer</strong> 这个项目进行打包，并且添加一个自定义图标。这里 Kivy 的样例目录要注意，如果是用 wheels 安装的，在 <code>python\\share\\kivy-examples</code> 这个位置，如果从 github 上面下载的，就在 <code>kivy\\examples</code> 这个位置。为了避免混乱，这里就用 <code>examples-path</code> 来指代这个目录的完整路径。然后 touchtracer 这个样例在 <code>examples-path\\demo\\touchtracer</code> 这个文件夹里，代码文件是 <code>main.py</code>。</p>
+<h3>1 确保 Python</h3>
+<p>打开命令行确保 Python 包含在环境变量内，也就是说，输入 <code>python</code> 会出现解释器提示符。（译者注：cmd 或者 powershell 都可以，更推荐用后者，语法和 Bash 比较相似。）</p>
+<h3>2 创建文件夹</h3>
+<p>在要打包 APP 的位置创建一个文件夹。比如咱们这次就创建一个名字为 <code>TouchApp</code> 的文件夹，然后用类似 <code>cd TouchApp</code> 这样的命令<a href="http://www.computerhope.com/cdhlp.htm">进入到这个新建目录内</a>。之后输入：</p>
+<p><code>Python
+python -m PyInstaller --name touchtracer examples-path\demo\touchtracer\main.py</code></p>
+<p>还可以增加一个 icon.ico 文件到这个应用目录，这样就可以让程序有自己的图标了。如果没有自己的 .ico 图标文件，可以把你的 icon.png 文件转换成 ico，用这个 <a href="http://www.convertico.com/">ConvertICO</a> 在线的应用就可以了。保存 icon.ico 到 touchtracer 这个目录里面，然后输入：</p>
+<p><code>Python
+python -m PyInstaller --name touchtracer --icon examples-path\demo\touchtracer\icon.ico examples-path\demo\touchtracer\main.py</code></p>
+<p>更多其它选项，请参考  <a href="http://pythonhosted.org/PyInstaller/">PyInstaller 官方说明</a>。</p>
+<h3>3 编辑配置文件</h3>
+<p>在 <code>TouchApp</code> 里面会有一个配置文件 <code>touchtracer.spec</code>。咱们需要编辑修改一下这个文件，在里面增加一些依赖包的 hook，这样才能保证正确创建 exe。接下来就是打开编辑器了，爱用啥都行，然后在配置文件的开头添加上下面这句：（这里是假设用的是 sdl2， 现在 Kivy 默认使用这个）</p>
+<p><code>Python
+from kivy.deps import sdl2, glew</code></p>
+<p>然后，用搜索，找到 <code>COLLECT()</code> 这个位置，添加上 touchtracer 用到的其他文件（touchtracer.kv, particle.png,等等）：修改示例中的行位置，添加一个 <code>Tree()</code> 对象，例如这里的是 <code>Tree('examples-path\\demo\\touchtracer\\')</code>。这个 <code>Tree()</code> 会搜索在当前这个 touchtracer 文件夹的所有文件，并添加到你最终打包的程序中。</p>
+<p>要添加额外的依赖包，就要在 COLLECT 的<strong>第一个关键词参数的前面</strong>，为每一个依赖包的路径添加一个 Tree 对象。例如下面的就是以 <code>*[Tree(p) for p in(sdl2.dep_bins + glew.dep_bins)]</code> 为例：</p>
+<p><code>Python
+coll = COLLECT(exe, Tree('examples-path\\demo\\touchtracer\\'),
+                   a.binaries,
+                   a.zipfiles,
+                   a.datas,
+                   *[Tree(p) for p in (sdl2.dep_bins + glew.dep_bins)],
+                   strip=False,
+                   upx=True,
+                   name='touchtracer')</code></p>
+<h3>4 进行构建</h3>
+<p>接下来就用 <code>TouchApp</code> 里面这个 spec 配置文件来进行构建了：</p>
+<p><code>Python
+python -m PyInstaller touchtracer.spec</code></p>
+<h3>5 生成位置</h3>
+<p>编译好的包会在 TouchApp\dist\touchtracer 这个目录。</p>
+<h2>使用 gstreamer 创建一个视频应用</h2>
+<p>接下来就是修改一下上面的这个样例了，这回要打包的 APP 是一个使用了 gstreamer 的视频应用。咱们这回用样例中的视频播放器的例子 <code>videoplayer</code>，代码在<code>examples-path\widgets\videoplayer.py</code>。另外创建一个名字为 <code>VideoPlayer</code> 的文件夹，然后在命令行中进入到这个文件夹，之后操作如下：</p>
+<p><code>Python
+python -m PyInstaller --name gstvideo examples-path\widgets\videoplayer.py</code></p>
+<p>这回要修改 <code>gstvideo.spec</code> 这个文件。跟上文的方法类似，也就是把 gstreamer 的依赖包放进去：</p>
+<p><code>Python
+from kivy.deps import sdl2, glew, gstreamer</code></p>
+<p>然后就是增加 <code>Tree()</code> 来包含好要用的视频文件，<code>Tree('examples-path\\widgets')</code> 和 gstreamer 依赖都得弄好，大概如下所示：</p>
+<p><code>Python
+coll = COLLECT(exe, Tree('examples-path\\widgets'),
+               a.binaries,
+               a.zipfiles,
+               a.datas,
+               *[Tree(p) for p in (sdl2.dep_bins + glew.dep_bins + gstreamer.dep_bins)],
+               strip=False,
+               upx=True,
+               name='gstvideo')</code></p>
+<p>接下来就是使用 <code>VideoPlayer</code> 文件夹中的这个 spec 配置文件来进行构建了：</p>
+<p><code>Python
+python -m PyInstaller gstvideo.spec</code></p>
+<p>然后你就能在 <code>VideoPlayer\dist\gstvideo</code> 这个位置找到 gstvideo.exe 这个文件了，运行一下就能播放视频了。</p>
+<h4>特别注意</h4>
+<p>如果你用了 Pygame，或者你打包的程序需要 Pygame，那在你的 spec 文件里面就还得添加如下的代码，在 import 导入语句的后面添加（详情参考 <a href="file:///D:/pythonProject/Kivy-CN-master/github.com/kivy/kivy/issues">kivy issue #1638</a>）：</p>
+<p>```Python
+def getResource(identifier, *args, **kwargs):
+    if identifier == 'pygame_icon.tiff':
+        raise IOError()
+    return <em>original</em>getResource(identifier, *args, **kwargs)</p>
+<p>import pygame.pkgdata
+<em>original</em>getResource = pygame.pkgdata.getResource
+pygame.pkgdata.getResource = getResource
+```</p>
+<h1>覆盖默认 Hook</h1>
+<h2>包含/移除视频音频以及缩小应用体积</h2>
+<p>PyInstallers 默认会将 Kivy 用到的所有核心模块和这些模块的依赖包，<strong>全部</strong>都添加成 hook，比如音频，视频，拼写等等（然而 gstreamer 的 dll 还是需要你用 <code>Tree()</code> 来手动添加，参考上文）。有的 Hook 并没有用到或者想要缩小应用的体积，就都可以尝试着移除一些模块，比如如果没有用到音频和视频，就可以用自定义的 Hook了。</p>
+<p>Kivy 在<a href="https://kivy.org/docs/api-kivy.tools.packaging.pyinstaller_hooks.html#kivy.tools.packaging.pyinstaller_hooks.hookspath" title="kivy.tools.packaging.pyinstaller_hooks.hookspath"><code>hookspath()</code></a> 提供了可选的 Hook。</p>
+<p>此外，当且仅当 PyInstaller 没有默认的 hook 的时候，就必须得提供一个<a href="https://kivy.org/docs/api-kivy.tools.packaging.pyinstaller_hooks.html#kivy.tools.packaging.pyinstaller_hooks.runtime_hooks" title="kivy.tools.packaging.pyinstaller_hooks.runtime_hooks"><code>runtime_hooks()</code></a>。 覆盖 hook的时候，这个<a href="https://kivy.org/docs/api-kivy.tools.packaging.pyinstaller_hooks.html#kivy.tools.packaging.pyinstaller_hooks.runtime_hooks" title="kivy.tools.packaging.pyinstaller_hooks.runtime_hooks"><code>runtime_hooks()</code></a> 不需要覆盖。</p>
+<p>可选自定义的<a href="https://kivy.org/docs/api-kivy.tools.packaging.pyinstaller_hooks.html#kivy.tools.packaging.pyinstaller_hooks.hookspath" title="kivy.tools.packaging.pyinstaller_hooks.hookspath"><code>hookspath()</code></a> hook不包含任何 Kivy 的 provider。要添加电话，就要用<a href="https://kivy.org/docs/api-kivy.tools.packaging.pyinstaller_hooks.html#kivy.tools.packaging.pyinstaller_hooks.get_deps_minimal" title="kivy.tools.packaging.pyinstaller_hooks.get_deps_minimal"><code>get_deps_minimal()</code></a> 或者 <a href="https://kivy.org/docs/api-kivy.tools.packaging.pyinstaller_hooks.html#kivy.tools.packaging.pyinstaller_hooks.get_deps_all" title="kivy.tools.packaging.pyinstaller_hooks.get_deps_all"><code>get_deps_all()</code></a>来添加。可以看看相关的文档以及<a href="https://kivy.org/docs/api-kivy.tools.packaging.pyinstaller_hooks.html#module-kivy.tools.packaging.pyinstaller_hooks" title="kivy.tools.packaging.pyinstaller_hooks"><code>pyinstaller_hooks</code></a>来了解更多信息。不过<a href="https://kivy.org/docs/api-kivy.tools.packaging.pyinstaller_hooks.html#kivy.tools.packaging.pyinstaller_hooks.get_deps_all" title="kivy.tools.packaging.pyinstaller_hooks.get_deps_all"><code>get_deps_all()</code></a>跟默认的 hook一样，都是把所有 provider 都添加进去；而<a href="https://kivy.org/docs/api-kivy.tools.packaging.pyinstaller_hooks.html#kivy.tools.packaging.pyinstaller_hooks.get_deps_minimal" title="kivy.tools.packaging.pyinstaller_hooks.get_deps_minimal"><code>get_deps_minimal()</code></a> 只添加在应用程序运行的时候加载了的内容。</p>
+<p>这两个方法都提供了一个 Kivy 隐藏导入列表，以及排除的导入，可以传递出来给 <code>Analysis</code>。</p>
+<p>还可以生成一个自定义 hook，一个个列出每一个 kivy 的 provider 模块，然后把其中用不上的就注释掉就行了。</p>
+<p>参考 <a href="https://kivy.org/docs/api-kivy.tools.packaging.pyinstaller_hooks.html#module-kivy.tools.packaging.pyinstaller_hooks" title="kivy.tools.packaging.pyinstaller_hooks"><code>pyinstaller_hooks</code></a>.</p>
+<p>要在上面的例子中使用自定义 hook，要按照下面给出的范例来修改，以<code>hookspath()</code> 和 <code>runtime_hooks</code>（必要情况下），然后是<code>**get_deps_minimal()</code> 或者 <code>**get_deps_all()</code>来制定好各种 provider。</p>
+<p>例如，增加了导入语句 <code>from kivy.tools.packaging.pyinstaller_hooks import&nbsp; get_deps_minimal, get_deps_all, hookspath,runtime_hooks</code> ，然后按照如下方式修改<code>Analysis</code>：</p>
+<p><code>Python
+a = Analysis(['examples-path\\demo\\touchtracer\\main.py'],
+             ...
+             hookspath=hookspath(),
+             runtime_hooks=runtime_hooks(),
+             ...
+             **get_deps_all())</code></p>
+<p>上面这个实际上跟默认 hook 一样包含全部了。或者可以：</p>
+<p><code>Python
+a = Analysis(['examples-path\\demo\\touchtracer\\main.py'],
+             ...
+             hookspath=hookspath(),
+             runtime_hooks=runtime_hooks(),
+             ...
+             **get_deps_minimal(video=None, audio=None))</code>
+这样就是移除了声音视频的 provider，这就只加载了用到的核心模块了。</p>
+<p>关键就是要提供自定义的 <a href="https://kivy.org/docs/api-kivy.tools.packaging.pyinstaller_hooks.html#kivy.tools.packaging.pyinstaller_hooks.hookspath" title="kivy.tools.packaging.pyinstaller_hooks.hookspath"><code>hookspath()</code></a>，这个默认并不会列出全部的 kivy provider，而是手动的来设定隐藏导入的模块和需要用的 provider，通过<a href="https://kivy.org/docs/api-kivy.tools.packaging.pyinstaller_hooks.html#kivy.tools.packaging.pyinstaller_hooks.get_deps_minimal" title="kivy.tools.packaging.pyinstaller_hooks.get_deps_minimal"><code>get_deps_minimal()</code></a>来移除用不上的模块 (比如上面的是声音影像)。</p>
+<h2>其他安装方式</h2>
+<p>前面的这些例子都用到了 <code>*[Tree(p) for p in (sdl2.dep_bins + glew.dep_bins + gstreamer.dep_bins)],</code> 这样的语句来保证 PyInstaller 把所有依赖包用到的 dll 都添加进去。如果不是用 wheel 的方法安装的 Kivy，那么这些命令就很可能失败，比如 <code>kivy.deps.sdl2</code> 可能就无法导入。这时候，你就必须得找到这些 dll 文件的位置，然后手动地一个个传递给 <code>Tree</code> 类，传递方法和上面说的基本差不多了。</p>
+<p>（译者注：Windows 平台还是推荐用 wheel 二进制安装，省心多了。）</p>
+
+
+
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
+</body></html>

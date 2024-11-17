@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)file:///C:/Users/Administrator/AppData/Local/Temp/MarkdownPadPreview.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>00-Kivy-CN</title>
+<script src="../main.js"></script>
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<!--<base href="file:\\\D:\pythonProject\Kivy-CN-master\">--><base href=".">
+</head>
+<body>
+<p>Title: Kivy CN
+Date: 2017-02-12
+Category: Kivy
+Tags: Python,Kivy</p>
+<h1>Kivy中文编程指南：我为什么对Kivy官方文档进行翻译</h1>
+<p>从去年开始，我陆续翻译了一些Kivy官方文档中的开发指南的内容，地址在<a href="http://blog.cycleuser.org/tag/kivy.html">这里</a>。</p>
+<p>然后我又觉得有必要找一个更大的平台，以便于能给更多人提供一点便利，所以我又开了一个<a href="https://zhuanlan.zhihu.com/python-kivy">知乎专栏</a>。</p>
+<p>然而新年这一阵，我做了个手术，身体状况不太好，感觉理解能力和表达能力也有所下降（其实本来也不行），所以我就想，不如按照之<a href="https://github.com/cycleuser/ThinkPython-en-cn">前ThinkPython的中文翻译</a>那样，直接把翻译稿开源放到Github吧，地址在<a href="https://github.com/cycleuser/Kivy-CN">这里</a>。虽然我并没有想出来这样有什么更好的。</p>
+<p>接触Kivy时间不长，一年多前最开始知道有这个项目的，当时的观感很差，因为遇到若干个Bug，反馈了之后也没见他们有什么动静。然后时间长了，发现跨平台的Python除了QT基本就只有这个了，相比之下，这个好歹不那么庞大，还是挺好玩的。但也就这样了，没有进一步关注。</p>
+<p>然后是要写<a href="https://github.com/cycleuser/GeoPython">GeoPython</a>，一些基础的方法都实现了之后，遇到了一些数学上的问题，然后学了一些数学相关的内容，大概有了解决思路之后，才意识到，TMD没有GUI啊，这样常规的地球科学领域的同行们根本懒得看对不对？日常用户才懒得吭哧吭哧学习如何在Bash或者Powershell之下使用iPython运行某个脚本对不对？所以我需要GUI，然而QT太庞大繁杂了，衡量了一下自己的智力水平，估计至少要花费半年才能大概入门。所以我又捡起来Kivy了。</p>
+<p>这个过程中我发现Kivy相关的中文资料还真不多，那我就从最基础的官方文档开始翻译一下吧，好歹自己边学习边相当于做笔记，以教促学，还能给人提供一点有用的参考，哪怕一丁点用处也好。</p>
+<p>就像我当年给人辅导研究生的C++和考博英语一样，其实也是给自己的持续学习找一个持久的动力，也是争取有一点能够积攒努力产生一个突破口。就像我的启蒙老师许先生当年给我讲的庞中华老前辈一样，一点一点积累总会有收获。</p>
+<p>我这些翻译的水平良莠不齐，其中有些简单的部分，我基本可以直接进行双语转换，这就不费什么力气。而由于我在编程的经验和水平两方面都比较差，有的部分一些术语名词翻译得不伦不类，所以我又只能心虚地标记上英文，避免对读者产生太严重的误导。</p>
+<p>但我还是会继续下去的，学习和翻译两个过程还不能停下来。我不能因为自己现在三十多岁了而且水平还很差，就停止学习提高的尝试，因为一旦停下来，就更是一点希望都没有了，那就是直接向命运举白旗投降了。</p>
+<p>虽然时代已经不同了，我还是很钦佩王江民老前辈，专注和持久而创造了传奇。我没有那么大的野心，也不奢求什么辉煌成就，只是觉得有生之年，做点不后悔的事情吧。</p>
+<p></p>
+
+
+
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
+</body></html>

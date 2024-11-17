@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)file:///C:/Users/Administrator/AppData/Local/Temp/MarkdownPadPreview.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>15-Kivy-Pack-Android</title>
+
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<!--<base href="file:\\\D:\pythonProject\Kivy-CN-master\">--><base href=".">
+</head>
+<body>
+<p>Title: Kivy Pack Android
+Date: 2017-03-06
+Category: Kivy
+Tags: Python,Kivy</p>
+<h1>Kivy中文编程指南：打包为 Android 系统可执行文件</h1>
+<p><a href="https://kivy.org/docs/guide/packaging-android.html">英文原文</a></p>
+<p>你可以通过 <a href="https://github.com/kivy/python-for-android">python-for-android</a> 这个项目来打包一个 Android 应用。本页面详细讲解如何下载和打包，可以在你自己的机器上直接进行（参考<a href="https://kivy.org/docs/guide/packaging-android.html#packaging-your-application-into-apk">此页面</a>），或者使用预先构建好的<a href="https://kivy.org/docs/guide/packaging-android-vm.html#kivy-android-vm">Kivy Android 虚拟机</a>，或者使用<a href="https://kivy.org/docs/guide/packaging-android.html#buildozer">Buildozer</a> 来自动化完成整个过程。还可以参考 <a href="https://kivy.org/docs/guide/packaging-android.html#packaging-your-application-for-kivy-launcher">针对 Kivy Launcher 进行打包</a> 这样就不用编译就能运行 Kivy 应用。</p>
+<p>对新手，Kivy 官方推荐使用 <a href="https://kivy.org/docs/guide/packaging-android.html#buildozer">Buildozer</a> ，这是制作完整 APK 的最简单的途径。或者也可以使用 <a href="https://kivy.org/docs/guide/packaging-android.html#packaging-your-application-for-kivy-launcher">Kivy Launcher</a> 这个应用来运行你的 Kivy 应用，而不用编译了。</p>
+<p>Kivy 应用可以<a href="https://kivy.org/docs/guide/packaging-android.html#release-on-the-market">发布到 Android 应用市场</a>，比如谷歌的 Play 市场等等，只需要额外几步来创建一个完整签名的 APK 就可以了。</p>
+<p>Kivy 项目包含了一系列读取 Android API 的工具，可以实现震动、传感器读取、信息发送等等功能。相关的详细信息都可以参考<a href="https://kivy.org/docs/guide/android.html"> Kivy 的 Android 专题页面</a>。</p>
+<h4>特别注意</h4>
+<p>Android 平台目前已经支持 Python 3 了，不过还处于实验阶段。</p>
+<h2>Buildozer<a href="https://kivy.org/docs/guide/packaging-android.html#buildozer" title="Permalink to this headline">¶</a></h2>
+<p>Buildozer 是一个将整个构建过程自动化的工具。它会下载和设置 python-for-android 需要的所有依赖项目，包括 Android 的 SDK 和 NDK，然后会构建 APK ，这个 APK 可以自动推送到设备上。</p>
+<p>目前 Buildozer 只能用在 Linux 上面，而且还不是正式版，处于测试阶段，发布的是 alpha 版本，不过目前用起来还不错，能显著简化 APK 构建的过程。</p>
+<p>可以到<a href="https://github.com/kivy/buildozer"> Buildozer 的项目页面</a> 下载获取 Buildozer。</p>
+<p><code>Bash
+git clone https://github.com/kivy/buildozer.git
+cd buildozer
+sudo python2.7 setup.py install</code></p>
+<p>上面的命令就会把 Buildozer 安装到你的操作系统中。接下来就是到你的项目目录然后运行如下命令：</p>
+<p><code>Bash
+buildozer init</code></p>
+<p>这会在你的目录下创建一个名为 buildozer.spec 的文件，这个文件是控制项目构建选项的。估计你需要编辑修改一下这个文件，比如设置你应用的名字等等。在这里可以设置传递给 python-for-android 的全部或者大部分参数。</p>
+<p>安装<a href="https://buildozer.readthedocs.io/en/latest/installation.html#targeting-android"> Buildozer 的依赖项目</a>。</p>
+<p>最后一步了，连接上你的 Android 设备然后运行下面的命令：</p>
+<p><code>Bash
+buildozer android debug deploy run</code></p>
+<p>这样就可以创建、推送 APK 到你的设备上，然后就可以自动运行了。</p>
+<p>Buildozer 有很多可以控制的选项和工具，对你都会游泳，上面这些步骤只是创建 APK 的最简单的方法。可以到<a href="http://buildozer.readthedocs.org/en/latest/"> Buildozer 的官方文档页面</a>查看完整说明。也可以看看<a href="https://github.com/kivy/buildozer"> Buildozer 项目页面</a>的 README 文件。</p>
+<h2>通过 python-for-android 打包<a href="https://kivy.org/docs/guide/packaging-android.html#packaging-with-python-for-android" title="Permalink to this headline">¶</a></h2>
+<p>你还可以直接用 python-for-android 来打包应用，这样你可以有更多控制选项，但需要手动下载和设置 Android 工具链。</p>
+<p>参考<a href="https://python-for-android.readthedocs.io/en/latest/quickstart/">python-for-android 官方文档</a> 查看全部细节。</p>
+<h2>针对 Kivy Launcher 打包<a href="https://kivy.org/docs/guide/packaging-android.html#packaging-your-application-for-the-kivy-launcher" title="Permalink to this headline">¶</a></h2>
+<p><a href="https://play.google.com/store/apps/details?id=org.kivy.pygame&amp;hl=en">Kivy launcher</a> 是一个 Android 应用，可以运行存储到 SD 卡里面的 Kivy 样例。可以用下面的方法来安装 Kivy launcher：</p>
+<ol>
+<li>前往<a href="https://market.android.com/details?id=org.kivy.pygame">谷歌 Play 市场中的 Kivy Launcher 页面</a>；</li>
+<li>点击安装；</li>
+<li>选择你的设备，然后就搞定了。</li>
+</ol>
+<p>如果你的设备无法访问谷歌 Play 市场（我大天朝么。。。），可以从<a href="http://kivy.org/#download"> Kivy 官网的下载页面</a> 手动下载安装 APK 文件。</p>
+<p>安装了 Kivy launcher 之后，就可以把你的 Kivy 应用放到外置存储的 Kivy 文件夹中，（通常是在 <code>/sdcard</code> 目录下），例如：</p>
+<p><code>Bash
+/sdcard/kivy/yourapplication&gt;</code></p>
+<p><code>&lt;yourapplication&gt;</code>你的应用应该是一个<strong>文件夹</strong>，包含以下文件：</p>
+<p>```Bash</p>
+<h1>程序主文件：</h1>
+<p>main.py</p>
+<h1>Kivy 需要的关于你应用的信息：</h1>
+<p>android.txt
+```
+以下信息是 android.txt 这个文件<strong>必须包含</strong>的：</p>
+<p><code>Bash
+title=&lt;Application Title&gt; #这是应用的标题
+	author=&lt;Your Name&gt;  #这是作者签名
+orientation=&lt;portrait|landscape&gt; #设定屏幕方向为水平或竖直</code></p>
+<p>上面这些都是非常基础的设置。如果你要用上面的工具来构建自己的 APK，还得调整很多其他的设定。</p>
+<h3>安装样例项目<a href="https://kivy.org/docs/guide/packaging-android.html#installation-of-examples" title="Permalink to this headline">¶</a></h3>
+<p>Kivy 自带了很多歌样例，可以先用这些来试一试 Kivy Launcher。可以用如下的方法来运行：</p>
+<ol>
+<li>下载 <a href="https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/kivy/kivydemo-for-android.zip"><code>Kivy demos for Android</code></a></li>
+<li>解压缩然后进入目录<code>kivydemo-for-android</code></li>
+<li>把目录内所有子目录等内容复制到 <code>/sdcard/kivy</code> 这个目录</li>
+<li>运行 Kivy Launcher 然后从样例中选择一个来试试，Pictures, Showcase, Touchtracer, Cymunk 等等都可以。</li>
+</ol>
+<h2>发布到应用市场<a href="https://kivy.org/docs/guide/packaging-android.html#release-on-the-market" title="Permalink to this headline">¶</a></h2>
+<p>如果你用 Buildozer 或者 python-for-android 构建了 APK 文件，就可以创建一个 release 版本来发布到谷歌 Play 市场或者其他 Android 应用市场。</p>
+<p>要想发布，就必须在运行 Buildozer 的时候添加上 <code>release</code> 参数，例如 <code>buildozer android release</code>，如果用了 python-for-android 就在 build.py 进行编译的时候加上<code>--release</code>。</p>
+<p>这样就能在 <code>bin</code> 目录里面创建一个正式发布的 release 版的 APK 文件，需要你做好签名和 zipalign 压缩优化（译者注：zipalign，优化apk应用程序的工具，使包内未压缩的数据能够有序的排列）。</p>
+<p>上面这些操作的详细过程可以参考 <a href="https://developer.android.com/studio/publish/app-signing.html#signing-manually">Android 官方文档</a> ，所有用到的工具都在 Android SDK 里面了。</p>
+<h2>设定 Android <a href="https://kivy.org/docs/guide/packaging-android.html#targeting-android" title="Permalink to this headline">¶</a></h2>
+<p>Kivy 的设计定位是提供跨平台的相同操作体验，因此也有一些清晰地设计特点。Kivy 包含了自己独有的一套控件，在默认情况下，用所有需要的依赖包和链接库来构建 APK 文件。</p>
+<p>也可以指定特定的 Android 功能，可以直接进行，也可以用（某些）跨平台的方式来实现。更多细节可以参考<a href="https://kivy.org/docs/guide/android.html"> Kivy 的 Android 专题页面</a> 中关于使用 Android API 的部分。</p>
+
+
+
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
+</body></html>

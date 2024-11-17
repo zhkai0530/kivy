@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)file:///C:/Users/Administrator/AppData/Local/Temp/MarkdownPadPreview.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>03-Kivy-Environment</title>
+
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<!--<base href="file:\\\D:\pythonProject\Kivy-CN-master\">--><base href=".">
+</head>
+<body>
+<p>Title: Kivy Environment
+Date: 2017-02-5
+Category: Kivy
+Tags: Python,Kivy</p>
+<h1>Kivy中文编程指南：环境变量</h1>
+<p><a href="https://kivy.org/docs/guide/environment.html">英文原文</a></p>
+<p>Kivy的初始化和很多行为都可以通过各种环境变量来控制。</p>
+<p>例如，若要严格设定用PIL进行文本渲染，可以通过如下方式来实现：</p>
+<p><code>Bash
+$ KIVY_TEXT=pil python main.py</code>
+(译者注：PIL，Python Imaging Library, Python 下常用的绘图库) </p>
+<p>所有的这些环境变量的修改设定都需要在导入Kivy之前进行，具体如下所示：</p>
+<p><code>Python
+import os
+os.environ['KIVY_TEXT'] = 'pil'
+import kivy</code></p>
+<h2>路径控制</h2>
+<ul>
+<li>从Kivy1.0.7版本开始提供</li>
+</ul>
+<p>You can control the default directories where config files, modules and kivy data are located.</p>
+<p>Kivy的配置文件、模块以及数据存储的默认目录，都可手动设定所在位置。</p>
+<blockquote>
+<p>KIVY<em>DATA</em>DIR</p>
+</blockquote>
+<p>这个是Kivy的数据目录，默认值为/data 。</p>
+<blockquote>
+<p>KIVY<em>MODULES</em>DIR</p>
+</blockquote>
+<p>这个是Kivy的模块目录，默认值为/modules 。</p>
+<blockquote>
+<p>KIVY_HOME</p>
+</blockquote>
+<p>这个是Kivy的HOME目录，该目录是用来存放本地配置文件的，必须是一个可以写入的位置。对应不同系统也有不同位置：</p>
+<pre><code>* Desktop: /.kivy
+* Android: /.kivy
+* iOS: /Documents/.kivy
+</code></pre>
+
+<ul>
+<li>从Kivy1.9.0版本开始提供</li>
+</ul>
+<blockquote>
+<p>KIVY<em>SDL2</em>PATH</p>
+</blockquote>
+<p>这个变量若设定了，编译Kivy的时候就会使用该位置的SDL2库文件，而不再使用系统的库文件。在环境变量PATH的开头部位就要设定好这个变量，这样在运行一个Kivy应用的时候才能也使用相同的SDL2库文件。</p>
+<ul>
+<li>从Kivy1.9.0版本开始提供</li>
+</ul>
+<h4>特别注意</h4>
+<p>刚刚这个SDL2路径是用来编译Kivy的。运行程序的话就用不着了。</p>
+<h2>配置文件</h2>
+<blockquote>
+<p>KIVY<em>USE</em>DEFAULTCONFIG</p>
+</blockquote>
+<p>若设定了此环境变量，Kivy会读取制定的配置文件。</p>
+<blockquote>
+<p>KIVY<em>NO</em>CONFIG</p>
+</blockquote>
+<p>若设定了此环境变量，Kivy将不会读取也不会写入任何配置文件。也适用于用户配置文件夹的位置。（译者注：这句话我还没弄明白，因为没有这样尝试。）</p>
+<blockquote>
+<p>KIVY<em>NO</em>FILELOG</p>
+</blockquote>
+<p>若设定了此环境变量，日志将不再输出到文件内。</p>
+<blockquote>
+<p>KIVY<em>NO</em>CONSOLELOG</p>
+</blockquote>
+<p>若设定了此环境变量，日志将不再输出到控制台。</p>
+<blockquote>
+<p>KIVY<em>NO</em>ARGS</p>
+</blockquote>
+<p>若设定了此环境变量，命令行传递的参数将不会被Kivy解析和使用。也就是说，可以不用 – 定义符，就能随便创建一个使用自己参数的脚本或者应用：</p>
+<p><code>Python
+import os
+os.environ["KIVY_NO_ARGS"] = "1"
+import kivy</code></p>
+<ul>
+<li>从Kivy1.9.0版本开始提供</li>
+</ul>
+<h2>限定Kivy.core核心，使用特定版本</h2>
+<p>Kivy.core会尝试使用所在平台的最优实现。如果要测试或者定制安装，你可能要把选择器设定为某个特定版本的kivy.core。</p>
+<blockquote>
+<p>KIVY_WINDOW</p>
+</blockquote>
+<p>这一变量是用来设定如何创建窗口，可用值：sdl2, pygame, x11, egl_rpi</p>
+<blockquote>
+<p>KIVY_TEXT</p>
+</blockquote>
+<p>这一变量是用来设定如何渲染文本，可用值：sdl2, pil, pygame, sdlttf</p>
+<blockquote>
+<p>KIVY_VIDEO</p>
+</blockquote>
+<p>这一变量是用来设定如何渲染视频，可用值：pygst, gstplayer, pyglet, ffpyplayer, ffmpeg, gi, null</p>
+<blockquote>
+<p>KIVY_AUDIO</p>
+</blockquote>
+<p>这一变量是用来设定如何播放声音，可用值：sdl2, gstplayer, pygst, ffpyplayer, pygame, gi, avplayer</p>
+<blockquote>
+<p>KIVY_IMAGE</p>
+</blockquote>
+<p>这一变量是用来设定如何读取图像，可用值：sdl2, pil, pygame, imageio, tex, dds, gif</p>
+<blockquote>
+<p>KIVY_CAMERA</p>
+</blockquote>
+<p>这一变量是用来设定如何读取摄像头，可用值：videocapture, avfoundation, pygst, opencv</p>
+<blockquote>
+<p>KIVY_SPELLING</p>
+</blockquote>
+<p>这一变量是用来设定拼写，可用值： enchant, osxappkit</p>
+<blockquote>
+<p>KIVY_CLIPBOARD</p>
+</blockquote>
+<p>这一变量是用来设定剪切板管理组件，可用值：sdl2, pygame, dummy, android</p>
+<h2>设置单位</h2>
+<blockquote>
+<p>KIVY_DPI</p>
+</blockquote>
+<p>这个是用来设定Metrics.dpi的dpi值的。</p>
+<ul>
+<li>从Kivy1.4.0版本开始提供</li>
+</ul>
+<blockquote>
+<p>KIVY<em>METRICS</em>DENSITY</p>
+</blockquote>
+<p>这个是用来设定Metrics.density，像素密度。</p>
+<ul>
+<li>从Kivy1.5.0版本开始提供</li>
+</ul>
+<blockquote>
+<p>KIVY<em>METRICS</em>FONTSCALE</p>
+</blockquote>
+<p>这个是用来设定Metrics.fontscale，字体大小。</p>
+<ul>
+<li>从Kivy1.5.0版本开始提供</li>
+</ul>
+<h2>图形输出</h2>
+<blockquote>
+<p>KIVY<em>GL</em>BACKEND</p>
+</blockquote>
+<p>此变量用于设定使用的OpenGL后端，更多细节参考<a href="http://kivy.org/docs/api-kivy.graphics.cgl.html#module-kivy.graphics.cgl" title="kivy.graphics.cgl">cgl</a>.</p>
+<blockquote>
+<p>KIVY<em>GL</em>DEBUG</p>
+</blockquote>
+<p>此变量用于设定是否对OpenGL调用进行日志记录，更多细节参考<a href="http://kivy.org/docs/api-kivy.graphics.cgl.html#module-kivy.graphics.cgl" title="kivy.graphics.cgl">cgl</a>.</p>
+<blockquote>
+<p>KIVY_GRAPHICS</p>
+</blockquote>
+<p>此变量用于设定是否使用OpenGL ES2，更多细节参考<a href="http://kivy.org/docs/api-kivy.graphics.cgl.html#module-kivy.graphics.cgl" title="kivy.graphics.cgl">cgl</a>.</p>
+<blockquote>
+<p>KIVY<em>GLES</em>LIMITS</p>
+</blockquote>
+<p>此变量用于设定是否强制设定GLES2（默认值为启用，设置为1）。如果设定为false，Kivy将不再兼容GLES2。（译者注：这部分我不懂，就直接生硬翻译了原文，建议大家参考一下原文去理解。）如果设置为true，可能有下表中所示的潜在的不兼容情况：</p>
+<p>| Mesh indices | If true, the number of indices in a mesh is limited to 65535 |
+| ------------- |:-------------:|
+| Texture blit | When blitting to a texture, the data (color and buffer) format must be the same format as the one used at the texture creation. On desktop, the conversion of different color is correctly handled by the driver, while on Android, most of devices fail to do it. Ref: <a href="https://github.com/kivy/kivy/issues/1600">https://github.com/kivy/kivy/issues/1600</a> |</p>
+<ul>
+<li>从Kivy1.8.1版本开始提供</li>
+</ul>
+<blockquote>
+<p>KIVY<em>BCM</em>DISPMANX_ID</p>
+</blockquote>
+<p>此变量是针对Raspberry Pi树莓派平台的，用于设定所选择的视频输出端口。默认值为0，下面列表中是在vc<em>dispmanx</em>types.h这个头文件中存储的可供选择的变量值：</p>
+<ul>
+<li>0: DISPMANX<em>ID</em>MAIN_LCD</li>
+<li>1: DISPMANX<em>ID</em>AUX_LCD</li>
+<li>2: DISPMANX<em>ID</em>HDMI</li>
+<li>3: DISPMANX<em>ID</em>SDTV</li>
+<li>4: DISPMANX<em>ID</em>FORCE_LCD</li>
+<li>5: DISPMANX<em>ID</em>FORCE_TV</li>
+<li>6: DISPMANX<em>ID</em>FORCE_OTHER</li>
+</ul>
+<p>（译者注：上面0-6分别是不同的显示输出端口，相信很容易看懂，大家探索一下吧。）</p>
+
+
+
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
+</body></html>
